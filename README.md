@@ -1,8 +1,9 @@
 Downloads
 ======
-[Download v0.8 .EXE](../out/artifacts/fog_setting_project_jar/[RTX] Fog & Biome & Pack Manager 0.8.exe)
 
-[Download v0.8 .JAR](../out/artifacts/fog_setting_project_jar/fog_setting_project.jar)
+[Download v0.8 .EXE](https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager/raw/main/out/artifacts/fog_setting_project_jar/%5BRTX%5D%20Fog%20%26%20Biome%20%26%20Pack%20Manager%200.8.exe)
+
+[Download v0.8 .JAR](https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager/raw/main/out/artifacts/fog_setting_project_jar/fog_setting_project.jar)
 
 
 [RTX]Fog & Biome & Pack Manager
