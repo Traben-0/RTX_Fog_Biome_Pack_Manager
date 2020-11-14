@@ -5,6 +5,7 @@ Downloads
 
 [Download v0.8 .JAR](https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager/raw/main/out/artifacts/fog_setting_project_jar/fog_setting_project.jar)
 
+//v0.8 - quick bugfixes all the default files setup should work properly as do all the saving/exporting modes
 
 [RTX]Fog & Biome & Pack Manager
 ------
@@ -13,7 +14,7 @@ This is the program i've been working on as an extension of my previous fog edit
 It is able to enable RTX, and manage the biomes and fog settings, of existing resource pack folders, .mcpack files, and standalone biome_client files. 
 As well as create RTX ready packs for new creators.
 
-####Usages include: 
+#### Usages include: 
 * creating game-ready fog-only packs as .mcpack's from scratch
 * copying fog & biome settings from one pack to another pack (per biome)
 * removing/adding/changing fog & biome settings in any pack 
