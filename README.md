@@ -1,6 +1,8 @@
 Downloads
 ======
 
+(this program is still in the testing phase and may have bugs)
+
 [Download v0.9 .EXE](https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager/raw/main/out/artifacts/fog_setting_project_jar/%5BRTX%5D%20Fog%20%26%20Biome%20%26%20Pack%20Manager%200.9.exe)
 
 [Download v0.9 .JAR](https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager/raw/main/out/artifacts/fog_setting_project_jar/fog_setting_project.jar)
