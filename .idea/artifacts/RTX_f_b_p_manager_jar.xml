@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RTX_f_b_p_manager:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/RTX_f_b_p_manager_jar</output-path>
+    <root id="archive" name="RTX_f_b_p_manager.jar">
+      <element id="module-output" name="RTX_f_b_p_manager" />
+    </root>
+  </artifact>
+</component>

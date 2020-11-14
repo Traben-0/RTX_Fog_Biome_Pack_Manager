@@ -571,7 +571,7 @@ public class biome {
             UseThisFogCheck.setSelected(false);
             isUsingDefaultFog = true;
             fogID= defaultBiome.fogID;
-        }else if (copyableList.getSelectedIndex() == allBiomes.indexOf(this) && copyableList.isEnabled()){
+        }else if (copyableList.getSelectedItem() ==this && copyableList.isEnabled()){
             openEditorManaged.setEnabled(true);
             UseThisFogCheck.setSelected(true);
             isUsingDefaultFog = false;
