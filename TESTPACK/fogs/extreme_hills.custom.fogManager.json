@@ -1,0 +1,82 @@
+/*
+ - Fog Definition Made by Biome & Fog Manager's Fog Editor
+ - Coded by @Traben from the Minecraft RTX Discord
+  */
+{
+  "format_version": "1.16.100",
+  "minecraft:fog_settings": {
+    "description": {
+      "identifier": "managed:extreme_hills_custom_managed"
+    },
+    "distance": {
+      "air": {
+        "fog_start": 0.92,
+        "fog_end": 1.0,
+        "fog_color": "#ABD2FF",
+        "render_distance_type": "Render distance."
+      },
+      "water": {
+        "fog_start": 0.92,
+        "fog_end": 1.0,
+        "fog_color": "#44AFF5",
+        "render_distance_type": "Render distance."
+      },
+      "weather": {
+        "fog_start": 0.23,
+        "fog_end": 0.7,
+        "fog_color": "#666666",
+        "render_distance_type": "Render distance."
+      },
+      "lava": {
+        "fog_start": 0.0,
+        "fog_end": 0.64,
+        "fog_color": "#991A00",
+        "render_distance_type": "Fixed block distance."
+      },
+      "lava_resistance": {
+        "fog_start": 2.0,
+        "fog_end": 4.0,
+        "fog_color": "#991A00",
+        "render_distance_type": "Fixed block distance."
+      }
+    },
+    "volumetric": {
+      "density": {
+        "air": {
+          "max_density": 0.25,
+          "uniform": true
+        },
+        "water": {
+          "max_density": 0.8,
+          "uniform": true
+        },
+        "weather": {
+          "max_density": 0.25,
+          "uniform": true
+        },
+        "lava": {
+          "max_density": 0.25,
+          "uniform": true
+        },
+        "lava_resistance": {
+          "max_density": 0.25,
+          "uniform": true
+        }
+      },
+      "media_coefficients": {
+        "air": {
+          "scattering": [ 0.02, 0.02, 0.02 ],
+          "absorption": [ 0.0, 0.0, 0.0 ]
+        },
+        "water": {
+          "scattering": [ 0.0011, 0.002, 0.003 ],
+          "absorption": [ 0.16, 0.1019, 0.1019 ]
+        },
+        "cloud": {
+          "scattering": [ 0.2, 0.2, 0.2 ],
+          "absorption": [ 0.0, 0.0, 0.0 ]
+        }
+      }
+    }
+  }
+}

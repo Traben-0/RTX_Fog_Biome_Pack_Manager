@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="fog_setting_project:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/fog_setting_project_jar</output-path>
+    <root id="archive" name="fog_setting_project.jar">
+      <element id="module-output" name="fog_setting_project" />
+    </root>
+  </artifact>
+</component>

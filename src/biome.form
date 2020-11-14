@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="biome">
+  <grid id="27dc6" binding="thisBiomePanel" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="5" left="5" bottom="5" right="5"/>
+    <constraints>
+      <xy x="20" y="20" width="680" height="384"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <tabbedpane id="a1f3e" binding="tabbedPane1" default-binding="true">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="270" height="250"/>
+            <maximum-size width="270" height="250"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="dcf4a" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Biome"/>
+            </constraints>
+            <properties>
+              <background color="-3613198"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="2f2ad" class="javax.swing.JButton" binding="image">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <maximum-size width="265" height="180"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="58d4d" class="javax.swing.JLabel" binding="description">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="40"/>
+                    <maximum-size width="270" height="40"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-3613198"/>
+                  <font name="Candara" size="36" style="1"/>
+                  <text value="biome"/>
+                </properties>
+              </component>
+              <component id="a907c" class="javax.swing.JSeparator">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+            </children>
+          </grid>
+          <grid id="311ed" binding="wPanel" layout-manager="GridLayoutManager" row-count="6" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Water"/>
+            </constraints>
+            <properties>
+              <background color="-3613198"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="78b95" class="javax.swing.JCheckBox" binding="waterCheck">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-3613198"/>
+                  <selected value="true"/>
+                  <text value="Use Default Biome's Water Colour"/>
+                </properties>
+              </component>
+              <component id="7b26b" class="javax.swing.JLabel" binding="descriptionW">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="40"/>
+                    <maximum-size width="320" height="36"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-3613198"/>
+                  <font name="Candara" size="36" style="1"/>
+                  <text value="biome"/>
+                </properties>
+              </component>
+              <component id="60425" class="javax.swing.JSeparator">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <grid id="5f7e3" binding="transCont" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="5" bottom="5" right="0"/>
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-3613198"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="84f6a" class="javax.swing.JSpinner" binding="transparencyField">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="45" height="-1"/>
+                        <maximum-size width="45" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties/>
+                  </component>
+                  <component id="87d1" class="javax.swing.JSlider" binding="transparencySlider">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="190" height="-1"/>
+                        <maximum-size width="200" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-3613198"/>
+                      <maximum value="100"/>
+                      <value value="0"/>
+                      <valueIsAdjusting value="false"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <component id="d99cf" class="javax.swing.JCheckBox" binding="transCheck">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <maximum-size width="-1" height="15"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-3613198"/>
+                  <hideActionText value="false"/>
+                  <selected value="true"/>
+                  <text value="Use Default's Water Transparency"/>
+                </properties>
+              </component>
+              <grid id="3dce5" binding="waterCont" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="5" left="5" bottom="5" right="5"/>
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="270" height="50"/>
+                    <maximum-size width="270" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-3613198"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <grid id="8b9af" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-3613198"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="e95ee" class="javax.swing.JTextArea" default-binding="true">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-3613198"/>
+                          <text value="G"/>
+                        </properties>
+                      </component>
+                      <component id="2ed07" class="javax.swing.JTextArea" default-binding="true">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-3613198"/>
+                          <text value="B"/>
+                        </properties>
+                      </component>
+                      <component id="24154" class="javax.swing.JSlider" binding="waterBlueSlider">
+                        <constraints>
+                          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="140" height="-1"/>
+                            <maximum-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-3613198"/>
+                          <maximum value="255"/>
+                          <value value="0"/>
+                        </properties>
+                      </component>
+                      <component id="61640" class="javax.swing.JSlider" binding="waterGreenSlider">
+                        <constraints>
+                          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="140" height="-1"/>
+                            <maximum-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-3613198"/>
+                          <maximum value="255"/>
+                          <value value="0"/>
+                        </properties>
+                      </component>
+                      <component id="32300" class="javax.swing.JTextArea" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-3613198"/>
+                          <text value="R"/>
+                        </properties>
+                      </component>
+                      <component id="266a" class="javax.swing.JSlider" binding="waterRedSlider">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="140" height="-1"/>
+                            <maximum-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-3613198"/>
+                          <maximum value="255"/>
+                          <toolTipText value="Red Value"/>
+                          <value value="0"/>
+                          <valueIsAdjusting value="true"/>
+                        </properties>
+                      </component>
+                      <component id="7bc60" class="javax.swing.JSpinner" binding="waterRed">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="40" height="-1"/>
+                            <maximum-size width="40" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="869a9" class="javax.swing.JSpinner" binding="waterGreen">
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="40" height="-1"/>
+                            <maximum-size width="40" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="1e7a4" class="javax.swing.JSpinner" binding="waterBlue">
+                        <constraints>
+                          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="40" height="-1"/>
+                            <maximum-size width="40" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="8e719" binding="colourDisplay" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                        <minimum-size width="25" height="-1"/>
+                        <preferred-size width="40" height="-1"/>
+                        <maximum-size width="40" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-1377793"/>
+                    </properties>
+                    <border type="bevel-lowered"/>
+                    <children/>
+                  </grid>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <grid id="a303c" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Fog"/>
+            </constraints>
+            <properties>
+              <background color="-3613198"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="db887" class="javax.swing.JLabel" binding="descriptionF">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="40"/>
+                    <maximum-size width="320" height="40"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-3613198"/>
+                  <font name="Candara" size="36" style="1"/>
+                  <text value="biome"/>
+                </properties>
+              </component>
+              <component id="512e" class="javax.swing.JSeparator">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="-1" height="1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <grid id="73f7a" binding="fogCont" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="5" left="5" bottom="5" right="5"/>
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="270" height="150"/>
+                    <maximum-size width="270" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-3613198"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="182b3" class="javax.swing.JComboBox" binding="copyableList">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <enabled value="true"/>
+                      <model/>
+                    </properties>
+                  </component>
+                  <component id="8c04f" class="javax.swing.JLabel" binding="orFogText">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false">
+                        <maximum-size width="-1" height="15"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <enabled value="true"/>
+                      <text value="Or use another Biome's fog:"/>
+                    </properties>
+                  </component>
+                  <component id="41052" class="javax.swing.JButton" binding="openEditorManaged">
+                    <constraints>
+                      <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <maximum-size width="250" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <enabled value="false"/>
+                      <text value="Edit with Fog Editor"/>
+                    </properties>
+                  </component>
+                  <component id="f236f" class="javax.swing.JCheckBox" binding="UseThisFogCheck">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-3613198"/>
+                      <text value="Use this biomes fog file?"/>
+                    </properties>
+                  </component>
+                  <vspacer id="f5fd4">
+                    <constraints>
+                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                  </vspacer>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <grid id="bc72c" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Custom Fog"/>
+            </constraints>
+            <properties>
+              <background color="-3613198"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="64dab" class="javax.swing.JCheckBox" binding="customCheck">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <maximum-size width="270" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-3613198"/>
+                  <text value="Use a Custom Fog File?"/>
+                </properties>
+              </component>
+              <component id="7e04c" class="javax.swing.JSeparator">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="964d2" class="javax.swing.JLabel" binding="descriptionA">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="40"/>
+                    <maximum-size width="320" height="40"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-3613198"/>
+                  <font name="Candara" size="36" style="1"/>
+                  <text value="biome"/>
+                </properties>
+              </component>
+              <component id="e432a" class="javax.swing.JSeparator">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <minimum-size width="-1" height="1"/>
+                    <preferred-size width="-1" height="1"/>
+                    <maximum-size width="-1" height="1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <grid id="bc4f2" binding="customCont" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="5" left="5" bottom="5" right="5"/>
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <maximum-size width="270" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-3613198"/>
+                  <enabled value="false"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="de655" class="javax.swing.JSeparator">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-3613198"/>
+                      <enabled value="true"/>
+                    </properties>
+                  </component>
+                  <component id="1ac44" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-3613198"/>
+                      <enabled value="false"/>
+                      <font size="10" style="2"/>
+                      <text value="&lt;html&gt;(this will copy the selected file &lt;br&gt; to the active directory and rename it)&lt;/html&gt;"/>
+                    </properties>
+                  </component>
+                  <component id="5fb3a" class="javax.swing.JTextField" binding="customText">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="150" height="-1"/>
+                        <maximum-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <text value=""/>
+                    </properties>
+                  </component>
+                  <component id="ba543" class="javax.swing.JButton" binding="openCustomEditorButton">
+                    <constraints>
+                      <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <maximum-size width="250" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <enabled value="false"/>
+                      <text value="Open in Editor"/>
+                    </properties>
+                  </component>
+                  <component id="283" class="javax.swing.JButton" binding="fileButton">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <enabled value="true"/>
+                      <text value="Select custom fog &quot;.json&quot; to copy"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+        </children>
+      </tabbedpane>
+    </children>
+  </grid>
+</form>
