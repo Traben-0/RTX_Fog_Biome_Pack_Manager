@@ -244,7 +244,7 @@ public class biome {
         tabbedPane1.setEnabledAt(1,isEnabled);
         tabbedPane1.setEnabledAt(2,isEnabled);
         tabbedPane1.setEnabledAt(3,isEnabled);
-        System.out.println("???");
+        System.out.println("???gh");
         System.out.println(printSelf());
         imageFade(isEnabled);
     };
@@ -529,6 +529,8 @@ public class biome {
             colourDisplay.setBackground(waterColour);
     }
 
+   private boolean doChangeAndReact = false;
+
     private void initListeners(){
         if (customCheck.getActionListeners().length==0)
         customCheck.addActionListener(toggleEnable);
@@ -548,14 +550,21 @@ public class biome {
                 changeAndReactCopyList();
             }
         });
-        if (copyableList.getItemListeners().length==0)
-        copyableList.addItemListener(e ->  changeAndReactCopyList());
+        copyableList.addItemListener(e -> {
+            if (doChangeAndReact) changeAndReactCopyList();
+            doChangeAndReact= !doChangeAndReact;
+        });
+
+
     }
 
     private void changeAndReactCopyList(){
-        openEditorManaged.setEnabled(copyableList.getSelectedItem() == this);
-        isUsingDefaultFog = copyableList.getSelectedIndex() == 0;
+        //openEditorManaged.setEnabled(true);
+        System.out.println("what");
+        isUsingDefaultFog = (copyableList.getSelectedIndex() == 0);
         if(copyableList.getSelectedIndex() == 0 && copyableList.isEnabled()){
+            openEditorManaged.setEnabled(false);
+            UseThisFogCheck.setSelected(false);
             copyingOtherFog = true;
             copyFrom = allBiomes.get(0);
             openEditorManaged.setText("Copying Default fog");
@@ -563,6 +572,7 @@ public class biome {
             isUsingDefaultFog = true;
             fogID= defaultBiome.fogID;
         }else if (copyableList.getSelectedIndex() == allBiomes.indexOf(this) && copyableList.isEnabled()){
+            openEditorManaged.setEnabled(true);
             UseThisFogCheck.setSelected(true);
             isUsingDefaultFog = false;
             copyingOtherFog = false;
@@ -570,6 +580,7 @@ public class biome {
             openEditorManaged.setText("Edit this biomes fog");
             fogID="managed:"+name+"_managed";
         }else if ( copyableList.isEnabled()){
+            openEditorManaged.setEnabled(false);
             UseThisFogCheck.setSelected(false);
             isUsingDefaultFog = false;
             copyingOtherFog = true;
@@ -800,7 +811,7 @@ public class biome {
 
     }
     void receiveAllList(ArrayList<biome> b){
-        copyableList.setEditable(true);
+        copyableList.setEnabled(true);
         allBiomes = new ArrayList<>( b);
         if (waterColour.equals(allBiomes.get(0).waterColour) && !amDefault){
             hasColour= false;
@@ -844,31 +855,31 @@ public class biome {
                 if (amDefault) {
                     if (comma) output = output + ",\n";
                     output = output +
-                                        "      \"fog_identifier1\": \"" + fogID + "\"";
+                                        "      \"fog_identifier\": \"" + fogID + "\"";
                 }else{
                     if (comma) output = output + ",\n";
                     output = output +
-                            "      \"fog_identifier12\": \"" + defaultBiome.fogID + "\"";
+                            "      \"fog_identifier\": \"" + defaultBiome.fogID + "\"";
                 }
             } else if (copyingOtherFog && copyFrom !=null) {
                 if (comma) output = output + ",\n";
 
                 if (copyFrom.isUsingCustom){
                     output = output +
-                            "      \"fog_identifier2\": \"" + copyFrom.fogID + "mm\"";
+                            "      \"fog_identifier\": \"" + copyFrom.fogID + "\"";
                 }else{
                     output = output +
-                            "      \"fog_identifier22\": \"" + copyFrom.fogID + "mm\"";
+                            "      \"fog_identifier\": \"" + copyFrom.fogID + "\"";
                 }
 
             }else if (isUsingCustom){
                 if (comma) output = output + ",\n";
                 output = output +
-                        "      \"fog_identifier3\": \"managed:"+name+"_custom_managed\"";
+                        "      \"fog_identifier\": \"managed:"+name+"_custom_managed\"";
             }else{
                 if (comma) output = output + ",\n";
                 output = output +
-                        "      \"fog_identifier4\": \"" + fogID + "\"";
+                        "      \"fog_identifier\": \"" + fogID + "\"";
             }
             output = output + "\n    }";
 
