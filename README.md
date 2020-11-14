@@ -1,4 +1,11 @@
 # RTX_Fog_Biome_Pack_Manager
 Texturepack RTX enabler &amp; Biome and Fog Manager for Minecraft bedrock RTX
 
-[RTX] Fog & Biome & Pack Manager Test0.6.exe
+Downloads
+======
+[I'm a relative reference to a repository file](../blob/master/LICENSE)
+[I'm a relative reference to a repository file](../blob/master/LICENSE)
+
+
+[RTX]Fog & Biome & Pack Manager
+------
