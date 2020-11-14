@@ -6,6 +6,7 @@ Downloads
 [Download v0.9 .JAR](https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager/raw/main/out/artifacts/fog_setting_project_jar/fog_setting_project.jar)
 
 //v0.9 - bugfix when copying other biome not saving to file correctly
+
 //v0.8 - quick bugfixes all the default files setup should work properly as do all the saving/exporting modes
 
 [RTX]Fog & Biome & Pack Manager
