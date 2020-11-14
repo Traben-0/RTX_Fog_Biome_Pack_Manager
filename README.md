@@ -11,6 +11,8 @@ Downloads
 ------
 This is the program i've been working on as an extension of my previous fog editor in the MC RTX discord server.
 
+![Image of Program](example.png)
+
 It is able to enable RTX, and manage the biomes and fog settings, of existing resource pack folders, .mcpack files, and standalone biome_client files. 
 As well as create RTX ready packs for new creators.
 
