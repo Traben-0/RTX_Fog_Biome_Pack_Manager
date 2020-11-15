@@ -56,7 +56,7 @@ public class biome {
     private JCheckBox waterCheck;
     private JPanel customCont;
     private JTextField customText;
-    private JButton openCustomEditorButton;
+
     private JLabel description;
     private JButton image;
     private JLabel descriptionW;
@@ -184,7 +184,7 @@ public class biome {
         setDescription();
         initListeners();
         setDefaultBiome(default_biome);
-        hideFogsIfCustom();
+        //hideFogsIfCustom();
         UseThisFogCheck.setText("Use "+name+"'s fog file?");
 
         if (fileButton.getActionListeners().length==0)
@@ -294,17 +294,19 @@ public class biome {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             //This is where a real application would open the file.
             //log.append("Opening: " + file.getName() + "." + newline);
-            openCustomEditorButton.setEnabled(true);
+            //openCustomEditorButton.setEnabled(true);
             customFile = chooser.getSelectedFile();
-            customText.setText( customFile.getName());
+            customText.setText( "Custom File Loaded");
             copyingOtherFog = false;
-            fogID = "managed:"+name+"_custom_managed";
-            openingCustomEditor();
+            fogID = "managed:"+name+"_managed";
+            prepareCustomFile();
+            copyableList.setSelectedItem(this);
+            changeAndReactCopyList();
             BiomeMain.saveMessage.setVisible(true);
 
         } else {
             //log.append("Open command cancelled by user." + newline);
-            openCustomEditorButton.setEnabled(false);
+            //openCustomEditorButton.setEnabled(false);
             customText.setText("");
         }
     };
@@ -351,18 +353,18 @@ public class biome {
                         "name: "+name+
                         "\nfname: "+fileName+
                         "\nid: "+fogID);
-                File customPosition = new File(BiomeMain.activeDirectory + "\\fogs\\" + name+".custom.fogManager.json");
+                File customPosition = new File(BiomeMain.activeDirectory + "\\fogs\\" + name+".fogManager.json");
 
                 //if not managed custom file and it does exist copy it to that and set
-                if (!fileName.equals(name+".custom.fogManager.json") && new File(BiomeMain.activeDirectory + "\\fogs\\" + fileName).exists() && !fileName.equals("")){
+                if (!fileName.equals(name+".fogManager.json") && new File(BiomeMain.activeDirectory + "\\fogs\\" + fileName).exists() && !fileName.equals("")){
                     try {
-                        Path copied = Paths.get(BiomeMain.activeDirectory + "\\fogs\\" + name + ".custom.fogManager.json");
+                        Path copied = Paths.get(BiomeMain.activeDirectory + "\\fogs\\" + name + ".fogManager.json");
 
                         Path originalPath = Paths.get(BiomeMain.activeDirectory + "\\fogs\\" + fileName);
                         Files.copy(originalPath, copied, StandardCopyOption.REPLACE_EXISTING);
 
                         customFile = copied.toFile();
-                        replaceFogId(customFile,"managed:"+name+"_custom_managed");
+                        replaceFogId(customFile,"managed:"+name+"_managed");
                     }catch(IOException i){
                         //
                     }
@@ -373,17 +375,17 @@ public class biome {
                     customText.setText(customFile.getName());
                 }
             }
-            if (openCustomEditorButton.getActionListeners().length==0)
-                openCustomEditorButton.addActionListener(e -> openingCustomEditor());
+           /* if (openCustomEditorButton.getActionListeners().length==0)
+                openCustomEditorButton.addActionListener(e -> openingCustomEditor());*/
 
         }
 
-        private void openingCustomEditor(){
+        private void prepareCustomFile(){
             BiomeMain.saveMessage.setVisible(true);
             if (customFile!=null) {
                 try {
-                    if (!customFile.getName().equals(name+".custom.fogManager.json")) {
-                        Path copied = Paths.get(BiomeMain.activeDirectory + "\\fogs\\" + name + ".custom.fogManager.json");
+                    if (!customFile.getName().equals(name+".fogManager.json")) {
+                        Path copied = Paths.get(BiomeMain.activeDirectory + "\\fogs\\" + name + ".fogManager.json");
 
                         Path originalPath = customFile.toPath();
                         Files.copy(originalPath, copied, StandardCopyOption.REPLACE_EXISTING);
@@ -391,16 +393,16 @@ public class biome {
                         customFile = copied.toFile();
                         //(Files.readAllLines(originalPath).equals(Files.readAllLines(copied)));
 
-                        if (replaceFogId(customFile, "managed:" + name + "_custom_managed")) {
-                            openLockedFogFile(customFile, "managed:"+name+"_custom_managed");
+                        if (replaceFogId(customFile, "managed:" + name + "_managed")) {
+                           // openLockedFogFile(customFile, "managed:"+name+"_managed");
                         } else {
-                            utilityTraben.message(BiomeMain.frame, "Error: Editor not opened please manually change fog id of" +
+                          /*  utilityTraben.message(BiomeMain.frame, "Error: Editor not opened please manually change fog id of" +
                                     "\n " + customFile.getName() +
                                     "\n To" +
-                                    "\n\" managed:\"+name+\"_custom_managed\"");
+                                    "\n\" managed:\"+name+\"_managed\"");*/
                         }
                     }else{
-                        openLockedFogFile(customFile, "managed:"+name+"_custom_managed");
+                        //openLockedFogFile(customFile, "managed:"+name+"_managed");
                     }
 
 
@@ -617,19 +619,19 @@ public class biome {
 
             }else if(source == customCheck){
                 toggleEnables(customCont);
-                openCustomEditorButton.setEnabled(customText.getText().length() > 0);
+                //openCustomEditorButton.setEnabled(customText.getText().length() > 0);
                 isUsingCustom = customCheck.isSelected();
                 if (isUsingCustom) {
                     utilityTraben.message(BiomeMain.frame, "Disclaimer: This option is for technical users only." +
                             "\n it will copy the selected file to the active directory/pack being managed" +
-                            "\n if a new file is selected it WILL OVERWRITE any previous custom file of this biome!");
-                    fogID = "managed:"+name+"_custom_managed";
+                            "\n if a new file is selected it WILL OVERWRITE any previous file of this biome!");
+                    fogID = "managed:"+name+"_managed";
                     copyingOtherFog = false;
                 }else{
                    // fogID = "managed:"+name+"_managed";
                     changeAndReactCopyList();
                 }
-                hideFogsIfCustom();
+                //hideFogsIfCustom();
             }else if(source == transCheck){
                 toggleEnables(transCont);
                 isDefaultTrans = transCheck.isSelected();
@@ -638,7 +640,7 @@ public class biome {
         }
     };
 
-    private void hideFogsIfCustom(){
+/*    private void hideFogsIfCustom(){
       //  isUsingCustom
 
         if (is_custom()){
@@ -651,7 +653,7 @@ public class biome {
             tabbedPane1.setEnabledAt(2,true);
         }
 
-    }
+    }*/
     private static void setEnables(JPanel panel, boolean set){
         BiomeMain.saveMessage.setVisible(true);
         panel.setEnabled(set);
@@ -800,7 +802,7 @@ public class biome {
                             isUsingDefaultFog = b.name.equals("default");
 
                             break;
-                        }else if(fogID.equals("managed:" + b.name + "_custom_managed")) {
+                        }else if(fogID.equals("managed:" + b.name + "_managed")) {
                             copyableList.setSelectedItem(b);
                             System.out.println("ayy2");
                             copyFrom = b;
@@ -889,7 +891,7 @@ public class biome {
             }else if (isUsingCustom){
                 if (comma) output = output + ",\n";
                 output = output +
-                        "      \"fog_identifier\": \"managed:"+name+"_custom_managed\"";
+                        "      \"fog_identifier\": \"managed:"+name+"_managed\"";
             }else{
                 if (comma) output = output + ",\n";
                 output = output +

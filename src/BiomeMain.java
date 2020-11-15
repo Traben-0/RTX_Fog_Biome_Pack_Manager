@@ -16,7 +16,7 @@ import java.util.zip.ZipOutputStream;
 
 public class BiomeMain {
 
-    private static int currentVersion = 11;
+    private static int currentVersion = 12;
 
 
     private static JMenuItem saveMenu;
@@ -338,8 +338,8 @@ public class BiomeMain {
     private static void startBiomeManager(){
 
         frame.setTitle("Biome & Fog Manager BETA");
-        frame.setSize(635,700); //pixel size of frame in width then height
-        frame.setPreferredSize(new Dimension(635,700));
+        frame.setSize(650,700); //pixel size of frame in width then height
+        frame.setPreferredSize(new Dimension(650,700));
         frame.setResizable(true);
 
         System.out.println(activeDirectory.getAbsolutePath());
@@ -449,7 +449,7 @@ public class BiomeMain {
                      biomes) {
                     if (bCopy.getName().equals(bOriginal.getName())){
                         try {
-                            File to = new File(holdDirectory + "\\fogs\\" + bCopy.getName()+".custom.fogManager.json");
+                            File to = new File(holdDirectory + "\\fogs\\" + bCopy.getName()+".fogManager.json");
                             File from = new File(activeDirectory + "\\fogs\\" + bCopy.getFileName());
 
 
@@ -457,7 +457,7 @@ public class BiomeMain {
                             if (from.exists()){
                                 Files.copy(from.toPath(), to.toPath(), StandardCopyOption.REPLACE_EXISTING);
 
-                                utilityTraben.message(frame,"copied file to manager as "+bCopy.getName()+".custom.fogManager.json");
+                                utilityTraben.message(frame,"copied file to manager as "+bCopy.getName()+".fogManager.json");
                             }else{
                                 utilityTraben.message(frame,"copy of "+bCopy.getName()+" failed: file doesn't exist");
                             }
@@ -469,8 +469,8 @@ public class BiomeMain {
                         }
 
                         bOriginal.initializeAsCopy(bCopy.getName(),
-                                "managed:"+bCopy.getName()+"_custom_managed",
-                                bCopy.getName()+"custom.fogManager.json",
+                                "managed:"+bCopy.getName()+"_managed",
+                                bCopy.getName()+".fogManager.json",
                                 true,
                                 false,
                                 String.format("#%02X%02X%02X",
@@ -541,8 +541,8 @@ public class BiomeMain {
         JPanel cont = new JPanel();
         JPanel contcont = new JPanel();
 
-        prompt.setSize(635,700); //pixel size of frame in width then height
-        prompt.setPreferredSize(new Dimension(635,700));
+        prompt.setSize(650,700); //pixel size of frame in width then height
+        prompt.setPreferredSize(new Dimension(650,700));
         prompt.setResizable(true);
         //cont.setLayout(new GridLayout(0,1));
         //cont.setLayout(new GridBagLayout());
@@ -708,13 +708,13 @@ public class BiomeMain {
                     is_default_fog = (fogIdentifier.equals(biomeList.get(0).getFogID()) || fogIdentifier.equals(""));
 
                     //not self
-                    boolean otherFogCustom = (isManagedFog(fogFileName, fogIdentifier)  && !fogIdentifier.equals("managed:"+biomeName+"_custom_managed"));
+                    boolean otherFogCustom = (isManagedFog(fogFileName, fogIdentifier)  && !fogIdentifier.equals("managed:"+biomeName+"_managed"));
 
                     if (is_default_fog){
                         is_custom = false;
                     }else{
                         //if is default custom name   and is not own biomes custom name
-                        otherFogCustom = (fogIdentifier.contains("_custom_managed") && !fogIdentifier.equals("managed:"+biomeName+"_custom_managed"));
+                        otherFogCustom = (fogIdentifier.contains("_managed") && !fogIdentifier.equals("managed:"+biomeName+"_managed"));
                         is_custom = (!isManagedFog(fogFileName, fogIdentifier) && !otherFogCustom);
                     }
 
