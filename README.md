@@ -3,9 +3,11 @@ Downloads
 
 (this program is still in the testing phase and may have bugs)
 
-[Download v0.13 .EXE](https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager/raw/main/out/artifacts/RTX_f_b_p_manager_jar/%5BRTX%5D%20Fog%20%26%20Biome%20%26%20Pack%20Manager.exe)
+[Download v0.14 .EXE](https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager/raw/main/out/artifacts/RTX_f_b_p_manager_jar/%5BRTX%5D%20Fog%20%26%20Biome%20%26%20Pack%20Manager.exe)
 
-[Download v0.13 .JAR](https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager/raw/main/out/artifacts/RTX_f_b_p_manager_jar/fog_setting_project.jar)
+[Download v0.14 .JAR](https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager/raw/main/out/artifacts/RTX_f_b_p_manager_jar/fog_setting_project.jar)
+
+//v0.14 - Simplified biome copying, fixed several related bugs
 
 //v0.13 - Improved scrolling and update msg, started implimenting help menu, saving fog files now saves whole program
 

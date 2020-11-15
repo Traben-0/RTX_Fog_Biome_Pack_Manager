@@ -192,7 +192,33 @@ public class biome {
 
         if (openEditorManaged.getActionListeners().length==0)
             openEditorManaged.addActionListener(e -> {
-            System.out.println(BiomeMain.activeDirectory+"\\fogs\\"+fileName);
+                if (copyableList.getSelectedItem() != this){
+                    biome b = (biome)copyableList.getSelectedItem();
+
+                    if (b.copyingOtherFog){
+                        customFile = new File( BiomeMain.activeDirectory+"/fogs/"+b.copyFrom.name+".fogManager.json");
+                        utilityTraben.message(BiomeMain.frame,"Redirect: "+b.name+" is copying \n"+b.copyFrom.name +" getting that file");
+                    }else{
+                        customFile = new File( BiomeMain.activeDirectory+"/fogs/"+b.name+".fogManager.json");
+                    }
+
+                    if (!customFile.exists()){
+                        utilityTraben.message(BiomeMain.frame,"Error: selected biome has no file\n - Creating new file or loading existing file for this biome");
+                        customFile = new File( BiomeMain.activeDirectory+"/fogs/"+name+".fogManager.json");
+                        PrintEmptyFogFile(customFile,"managed:"+name+"_managed");
+                        System.out.println("test");
+                    }
+                    //customText.setText( "Custom File Loaded");
+                    copyingOtherFog = false;
+                    fogID = "managed:"+name+"_managed";
+                    prepareCustomFile();
+                    copyableList.setSelectedItem(this);
+                    changeAndReactCopyList();
+                    BiomeMain.saveMessage.setVisible(true);
+                }
+
+
+            //System.out.println(BiomeMain.activeDirectory+"\\fogs\\"+fileName);
             String fnamehere = name+".fogManager.json";
             String id = "managed:"+name+"_managed";
             if (copyingOtherFog){
@@ -211,6 +237,9 @@ public class biome {
     }
     private void PrintEmptyFogFile(File f , String id){
         try {
+
+            System.out.println( "making new file "+f.getAbsolutePath());
+
             FileWriter writer = new FileWriter(f);
 
             writer.write("/*\n" +
@@ -235,7 +264,7 @@ public class biome {
                     "}");
             writer.close();
         }catch(Exception hjg){
-            //lol
+            System.out.println("file not written wtf");
         }
     }
 
@@ -574,11 +603,11 @@ public class biome {
         System.out.println("what");
         isUsingDefaultFog = (copyableList.getSelectedIndex() == 0);
         if(copyableList.getSelectedIndex() == 0 && copyableList.isEnabled()){
-            openEditorManaged.setEnabled(false);
+            openEditorManaged.setEnabled(true);
             UseThisFogCheck.setSelected(false);
             copyingOtherFog = true;
             copyFrom = allBiomes.get(0);
-            openEditorManaged.setText("Copying Default fog");
+            openEditorManaged.setText("Copy Default fog settings to this biome to edit?");
             UseThisFogCheck.setSelected(false);
             isUsingDefaultFog = true;
             fogID= defaultBiome.fogID;
@@ -596,8 +625,8 @@ public class biome {
             isUsingDefaultFog = false;
             copyingOtherFog = true;
             copyFrom = allBiomes.get(copyableList.getSelectedIndex());
-            openEditorManaged.setText("Copying "+copyFrom.name+"'s fog");
-            openEditorManaged.setEnabled(false);
+            openEditorManaged.setText("Copy "+copyFrom.name+"'s fog to this biome to edit?");
+            openEditorManaged.setEnabled(true);
             if (!copyFrom.isEnabled){
                 if (ignoreNextMSG) utilityTraben.message(BiomeMain.frame,"Warning: The selected biome has not been enabled yet" +
                     "\n(Hint: Click on that biomes image to Enable it)");
