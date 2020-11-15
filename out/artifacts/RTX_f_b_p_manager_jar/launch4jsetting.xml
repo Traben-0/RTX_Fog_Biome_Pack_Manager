@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>E:\GitHub\RTX_Fog_Biome_Pack_Manager\out\artifacts\RTX_f_b_p_manager_jar\RTX_f_b_p_manager.jar</jar>
-  <outfile>E:\GitHub\RTX_Fog_Biome_Pack_Manager\out\artifacts\RTX_f_b_p_manager_jar\[RTX] Fog &amp; Biome &amp; Pack Manager 0.10.exe</outfile>
+  <outfile>E:\GitHub\RTX_Fog_Biome_Pack_Manager\out\artifacts\RTX_f_b_p_manager_jar\[RTX] Fog &amp; Biome &amp; Pack Manager 0.11.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>

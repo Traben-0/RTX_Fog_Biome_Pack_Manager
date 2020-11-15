@@ -5,6 +5,7 @@ import javax.swing.Timer;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.net.URL;
 import java.nio.file.*;
 import java.util.*;
 import java.util.List;
@@ -14,6 +15,9 @@ import java.util.zip.ZipOutputStream;
 
 
 public class BiomeMain {
+
+    private static int currentVersion = 11;
+
 
     private static JMenuItem saveMenu;
     private static JMenuItem exportPackMenu;
@@ -42,8 +46,38 @@ public class BiomeMain {
     public static void main(String[] args) {
         //Main bob = new Main("editor","", true,false);
 
+        //https://raw.githubusercontent.com/btrab1/RTX_Fog_Biome_Pack_Manager/main/versionCheckFile
+
 
         start(args);
+    }
+
+    private static void versionCheck(String str, int thisVersion){
+        try {
+            URL url = new URL(str);
+            //Retrieving the contents of the specified page
+            Scanner sc = new Scanner(url.openStream());
+            //Instantiating the StringBuffer class to hold the result
+            StringBuffer sb = new StringBuffer();
+            while (sc.hasNext()) {
+                sb.append(sc.next());
+                //System.out.println(sc.next());
+            }
+            //Retrieving the String from the String Buffer object
+            String result = sb.toString();
+            System.out.println("am version "+thisVersion);
+            System.out.println("found version "+result);
+            if (thisVersion < Integer.parseInt(result)){
+                utilityTraben.message(frame,"An update is available at\n ( https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager )");
+            }else{
+                System.out.println("up to date");
+            }
+            //Removing the HTML tags
+            //result = result.replaceAll("<[^>]*>", "");
+            //System.out.println("Contents of the web page: " + result);
+        }catch(Exception e){
+            System.out.println("version check failed");
+        }
     }
 
     private static void start(String[] args){
@@ -83,7 +117,7 @@ public class BiomeMain {
 
         render();
         frame.setVisible(true);
-
+        versionCheck("https://raw.githubusercontent.com/btrab1/RTX_Fog_Biome_Pack_Manager/main/versionCheckFile", currentVersion);
         if (launch.exitASAP) exitLauncher();
     }
     static void closingF(){
@@ -122,7 +156,7 @@ public class BiomeMain {
         saveMessage.setForeground(new Color(180,0,0));
 
 
-        saveMenu = new JMenuItem("Save changes");
+        saveMenu = new JMenuItem("Save Biome Changes");
         exportPackMenu = new JMenuItem("Export as .mcpack");
 
 

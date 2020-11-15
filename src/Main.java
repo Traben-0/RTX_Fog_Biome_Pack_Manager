@@ -32,7 +32,7 @@ public class Main {
     private final JMenuItem importExisting = new JMenuItem("copy from...");
     private final JMenuItem newFog = new JMenuItem("New");
     private final JMenuItem newFogOpen = new JMenuItem("Open");
-    private final JMenuItem saveMenu = new JMenuItem("Save");
+    private final JMenuItem saveMenu = new JMenuItem("Save Fog File");
     private final JMenuItem saveAsMenu = new JMenuItem("Save as");
 
     private final JMenuItem saveMessage = new JMenuItem("* Unsaved changes (go to File/Save)");
