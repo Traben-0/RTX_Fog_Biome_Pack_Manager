@@ -55,4 +55,5 @@ public class coefficients {
     public JPanel wacp;
     public JPanel cscp;
     public JPanel cacp;
+    JScrollPane scrll;
 }

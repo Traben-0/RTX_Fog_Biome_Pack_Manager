@@ -28,7 +28,7 @@ public class Main {
 
     private final JMenuBar menuBar = new JMenuBar();
     private final JMenu menu = new JMenu("File");
-    private final JMenuItem helpM = new JMenu("Help");
+    private final JMenuItem helpM = new JMenuItem("Help");
     private final JMenuItem importExisting = new JMenuItem("copy from...");
     private final JMenuItem newFog = new JMenuItem("New");
     private final JMenuItem newFogOpen = new JMenuItem("Open");
@@ -135,6 +135,8 @@ public class Main {
     private final ActionListener saveEvt = e -> {
         saveMessage.setVisible(false);
         save();
+        BiomeMain.saveBiomeFile(new File(BiomeMain.activeDirectory+"\\biomes_client.json"));
+        BiomeMain.saveMessage.setVisible(false);
     };
     private void save(){
         if (volumetricPage.weatherFogCheckBox.isSelected()) {
@@ -792,6 +794,10 @@ public class Main {
         wrapperF.tabbedPane1.add("Volumetric Fog (RTX)",volumetricPage.volumetric_content);
         wrapperF.tabbedPane1.add("Media Coefficients (RTX)",coefficiantPage.coefficient_content);
 
+        distancePage.scrll.getVerticalScrollBar().setUnitIncrement(20);
+        volumetricPage.scrll.getVerticalScrollBar().setUnitIncrement(20);
+        coefficiantPage.scrll.getVerticalScrollBar().setUnitIncrement(20);
+
         frame.setContentPane(wrapperF.mainWindow);
         if (titleAppend.matches("")) titleAppend = "¯\\_(ツ)_/¯";
         frame.setTitle("Fog Editor BETA: " + titleAppend);
@@ -998,6 +1004,8 @@ public class Main {
         //menuBar.add(menuSep);
         menuBar.add(sep);
         menuBar.add(helpM);
+        helpM.setMaximumSize(new Dimension(40,25));
+        menuBar.add(sep);
         frame.setJMenuBar(menuBar);
         menuBar.add(saveMessage);
         saveMessage.setVisible(false);
@@ -1009,6 +1017,8 @@ public class Main {
 
         newFogOpen.addActionListener(explorerOpen);
         importExisting.addActionListener(explorerOpen);
+
+        helpM.addActionListener(e -> new help(2));
 
     }
 

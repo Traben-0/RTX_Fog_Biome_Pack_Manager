@@ -5,6 +5,7 @@ import javax.swing.Timer;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.net.URI;
 import java.net.URL;
 import java.nio.file.*;
 import java.util.*;
@@ -16,7 +17,7 @@ import java.util.zip.ZipOutputStream;
 
 public class BiomeMain {
 
-    private static int currentVersion = 12;
+    private static int currentVersion = 13;
 
 
     private static JMenuItem saveMenu;
@@ -68,7 +69,27 @@ public class BiomeMain {
             System.out.println("am version "+thisVersion);
             System.out.println("found version "+result);
             if (thisVersion < Integer.parseInt(result)){
-                utilityTraben.message(frame,"An update is available at\n ( https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager )");
+                //utilityTraben.message(frame,"An update is available at\n ( https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager )");
+                int resulto = JOptionPane.showConfirmDialog(frame, "An update is available! \n\nWould you like to download?", "Update available",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE);
+                if (resulto == JOptionPane.YES_OPTION) {
+                    Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+                    if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+                        try {
+                            desktop.browse(new URI("https://github.com/btrab1/RTX_Fog_Biome_Pack_Manager"));
+                        } catch (Exception k) {
+                            k.printStackTrace();
+                        }
+                    }
+                    closingF();
+                } else if (resulto == JOptionPane.NO_OPTION) {
+                    //label.setText("You selected: No");
+                } else {
+                    //label.setText("None selected");
+                }
+
+
             }else{
                 System.out.println("up to date");
             }
@@ -151,6 +172,7 @@ public class BiomeMain {
         JMenuItem importExisting = new JMenuItem("Copy from Existing");
         JMenuItem  newManageLocation= new JMenuItem("New");
         JMenuItem  newManageLocationOpen= new JMenuItem("Open");
+        JMenuItem helpM = new JMenuItem("Help");
 
         saveMessage = new JLabel("* Unsaved changes (go to File/Save)");
         saveMessage.setForeground(new Color(180,0,0));
@@ -180,10 +202,17 @@ public class BiomeMain {
         //menuBar.add(menuSep);
         menuBar.add(sep);
         menuBar.add(editorM);
+
+        menuBar.add(sep);
+        menuBar.add(helpM);
+        menuBar.add(sep);
+        helpM.setMaximumSize(new Dimension(40,25));
         //frame.setJMenuBar(menuBar);
 
         menuBar.add(saveMessage);
         saveMessage.setVisible(false);
+
+        helpM.addActionListener(e -> {new help(0);});
 
         editor.addActionListener(e -> new Main("editor","","",false,false));
         editorFF.addActionListener(explorer);
@@ -321,6 +350,7 @@ public class BiomeMain {
         }
 
         frame.setContentPane(manager.ManagerContent);
+        manager.scrllpane.getVerticalScrollBar().setUnitIncrement(20);
         frame.setTitle("Biome & Fog Manager BETA: ("+activeDirectory+'/'+biomeFileName+')');
         menuBar.getComponent(0).setEnabled(true);
         //launch = null;
@@ -1058,7 +1088,7 @@ public class BiomeMain {
 
 
 
-    private static void saveBiomeFile(File f){
+    static void saveBiomeFile(File f){
 
         saveMessage.setVisible(false);
         try {

@@ -41,5 +41,6 @@ public class volumetric {
     public JSlider e1s;
     public JSlider l1s;
     public JSlider lr1s;
+    public JScrollPane scrll;
     public JTextField indentifierBox;
 }
