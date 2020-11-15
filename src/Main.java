@@ -35,6 +35,8 @@ public class Main {
     private final JMenuItem saveMenu = new JMenuItem("Save");
     private final JMenuItem saveAsMenu = new JMenuItem("Save as");
 
+    private final JMenuItem saveMessage = new JMenuItem("* Unsaved changes (go to File/Save)");
+
 
 
     private final settingPage distancePage= new settingPage();
@@ -49,7 +51,7 @@ public class Main {
 
 
     private final ItemListener action = e -> {
-
+            saveMessage.setVisible(true);
             Object source = e.getItemSelectable();
 
             if (source == distancePage.airFogCheckBox) {
@@ -131,6 +133,7 @@ public class Main {
     };
 
     private final ActionListener saveEvt = e -> {
+        saveMessage.setVisible(false);
         save();
     };
     private void save(){
@@ -158,7 +161,7 @@ public class Main {
         public void focusGained(FocusEvent e) {}
         public void focusLost(FocusEvent e) {
             Object source = e.getSource();
-
+            saveMessage.setVisible(true);
             if (source == coefficiantPage.a_a_r_1) {
                 coSliderConvert(coefficiantPage.a_a_r_1,coefficiantPage.a_a_r_2,true);
             }else if (source == coefficiantPage.a_a_g_1) {
@@ -201,6 +204,7 @@ public class Main {
         }
     };
     private final ActionListener updateOthersa = e -> {
+        saveMessage.setVisible(true);
         Object source = e.getSource();
 
         if (source == coefficiantPage.a_a_r_1) {
@@ -244,6 +248,7 @@ public class Main {
         }
     };
     private final ChangeListener updateOthersSlider = e -> {
+        saveMessage.setVisible(true);
         Object source = e.getSource();
 
         if (source == coefficiantPage.a_a_r_2) {
@@ -336,6 +341,7 @@ public class Main {
 
 
     private final ItemListener uniformDisable = e -> {
+        saveMessage.setVisible(true);
 
         Object source = e.getItemSelectable();
 
@@ -388,7 +394,7 @@ public class Main {
         public void focusGained(FocusEvent e) {}
         public void focusLost(FocusEvent e) {
             Object source = e.getSource();
-
+            saveMessage.setVisible(true);
             if (source == distancePage.ar) {
                 disSliderConvert(distancePage.ar,distancePage.air_fog_3_r,true);
             }else if (source == distancePage.ag) {
@@ -426,7 +432,7 @@ public class Main {
     };
     private final ChangeListener updateColoura = e -> {
         Object source = e.getSource();
-
+        saveMessage.setVisible(true);
         if (source == distancePage.ar) {
             disSliderConvert(distancePage.ar,distancePage.air_fog_3_r,true);
         }else if (source == distancePage.ag) {
@@ -462,7 +468,7 @@ public class Main {
     };
     private final ChangeListener updateColourSlider = e -> {
         Object source = e.getSource();
-
+        saveMessage.setVisible(true);
         if (source == distancePage.air_fog_3_r) {
             disSliderConvert(distancePage.ar,distancePage.air_fog_3_r,false);
         }else if (source == distancePage.air_fog_3_g) {
@@ -521,7 +527,7 @@ public class Main {
         @Override
         public void focusGained(FocusEvent e) {}
         public void focusLost(FocusEvent e) {
-
+            saveMessage.setVisible(true);
             JTextField source = (JTextField) e.getSource();
             double test;
             try {
@@ -544,7 +550,7 @@ public class Main {
         @Override
         public void focusGained(FocusEvent e) {}
         public void focusLost(FocusEvent e) {
-
+            saveMessage.setVisible(true);
             JTextField source = (JTextField) e.getSource();
             double test;
             try {
@@ -578,6 +584,7 @@ public class Main {
     private final ActionListener doubleInputTestaMax1 = this::doubleInputTestMethodaMax1;
     private  void doubleInputTestMethodaMax1(ActionEvent e){
         JTextField source = (JTextField) e.getSource();
+        saveMessage.setVisible(true);
         double test;
         try {
             test = Double.parseDouble(source.getText());
@@ -606,6 +613,7 @@ public class Main {
     }
     private  void doubleInputTestMethoda(ActionEvent e){
         JTextField source = (JTextField) e.getSource();
+        saveMessage.setVisible(true);
         double test;
         try {
             test = Double.parseDouble(source.getText());
@@ -626,7 +634,7 @@ public class Main {
         @Override
         public void focusGained(FocusEvent e) {}
         public void focusLost(FocusEvent e) {
-
+            saveMessage.setVisible(true);
             JTextField source = (JTextField) e.getSource();
             int test;
             try {
@@ -654,7 +662,7 @@ public class Main {
         }
     };
     private final ActionListener integerInputTesta = e -> {
-
+        saveMessage.setVisible(true);
         JTextField source = (JTextField) e.getSource();
         int test;
         try {
@@ -684,6 +692,7 @@ public class Main {
         public void focusGained(FocusEvent e) { }
         @Override
         public void focusLost(FocusEvent e) {
+            saveMessage.setVisible(true);
             JTextField source = (JTextField) e.getSource();
             String str = source.getText();
             str = str.replace(" ","_");
@@ -709,6 +718,7 @@ public class Main {
         }
     };
     private final ActionListener namespaceTesta = e -> {
+        saveMessage.setVisible(true);
         JTextField source = (JTextField) e.getSource();
         String str = source.getText();
         str = str.replace(" ","_");
@@ -775,7 +785,7 @@ public class Main {
        //frame.setContentPane(distancePage.distance_content);
 
 
-        if (closeFullProgramOnExit)frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        //if (closeFullProgramOnExit)frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 
         wrapperF.tabbedPane1.add("Distance Fog", distancePage.distance_content);
@@ -802,7 +812,7 @@ public class Main {
         initVolumeSliders();
         if (isManaged_Etc_UserCantName) hideManagedSettings();
 
-        //frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 
         wrapperF.fileNameField.setText(FILENAME);
         wrapperF.indentifierBox.setText(indentifier);
@@ -812,6 +822,36 @@ public class Main {
         if (!filePath.matches("")){
             loadJson(new File(filePath));
         }
+
+
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                if (saveMessage.isVisible()) {
+                    int result = JOptionPane.showConfirmDialog(frame, "Unsaved changes detected!\n(you can save in 'File/Save')\n \n Exit without saving?", "Exit?",
+                            JOptionPane.YES_NO_OPTION,
+                            JOptionPane.QUESTION_MESSAGE);
+                    if (result == JOptionPane.YES_OPTION) {
+                        closing();
+                    } else if (result == JOptionPane.NO_OPTION) {
+                        //label.setText("You selected: No");
+                    } else {
+                        //label.setText("None selected");
+                    }
+                }else{
+                    closing();
+                }
+
+            }
+        });
+
+    }
+
+    private void closing(){
+        System.out.println("exiting");
+
+        frame.dispose();
+
     }
 
     private void set10000Spinners(JSpinner s){
@@ -927,7 +967,7 @@ public class Main {
             }
             FILENAME = FILE.getName();
             wrapperF.fileNameField.setText(FILENAME);
-
+            saveMessage.setVisible(false);
             save();
 
         } else {
@@ -959,6 +999,9 @@ public class Main {
         menuBar.add(sep);
         menuBar.add(helpM);
         frame.setJMenuBar(menuBar);
+        menuBar.add(saveMessage);
+        saveMessage.setVisible(false);
+        saveMessage.setForeground(new Color(180,0,0));
 
         saveMenu.addActionListener(saveEvt);
         saveAsMenu.addActionListener(explorerSave);
@@ -987,7 +1030,10 @@ public class Main {
     }
 
     private void uniqueChanger(JSlider slider, JTextField field){
-        slider.addChangeListener(e -> field.setText(( slider.getValue() / 100d )+""));
+        slider.addChangeListener(e -> {
+            saveMessage.setVisible(true);
+            field.setText(( slider.getValue() / 100d )+"");
+        });
     }
 
     private void initDistanceSliders(){
@@ -1164,7 +1210,7 @@ public class Main {
 
     private final ChangeListener distanceSliders = e -> {
         Object source= e.getSource();
-
+        saveMessage.setVisible(true);
         if (source == distancePage.as1) {
             String str = ""+(distancePage.as1.getValue()/100d);
             distancePage.air_fog_1.setText(str);
@@ -1183,7 +1229,9 @@ public class Main {
 
         @Override
         public void focusLost(FocusEvent e) {
+            saveMessage.setVisible(true);
             if (
+
                     ((doubleReturn(distancePage.air_fog_1.getText()) >= doubleReturn(distancePage.air_fog_2.getText()))) ||
                             ((doubleReturn(distancePage.water_fog_1.getText()) >= doubleReturn(distancePage.water_fog_2.getText()))) ||
                             ((doubleReturn(distancePage.weather_fog_1.getText()) >= doubleReturn(distancePage.weather_fog_2.getText()))) ||
@@ -1196,7 +1244,7 @@ public class Main {
     };
 
     private final ActionListener renderChange = e -> {
-
+        saveMessage.setVisible(true);
         changeDistanceType();
 
         render();
@@ -1683,6 +1731,8 @@ public class Main {
             error("file not found");
         }
         //error("read complete");
+
+        saveMessage.setVisible(false);
     }
 
 
@@ -2112,7 +2162,7 @@ private void fileNameValidate(){
 
 
     private void printJson(){
-
+        saveMessage.setVisible(false);
         //error("start print");
         try {
 
@@ -2452,11 +2502,13 @@ private void fileNameValidate(){
             }
             @Override
             public void focusLost(FocusEvent e) {
+                saveMessage.setVisible(true);
                 FILENAME = wrapperF.fileNameField.getText();
                 fileNameValidate();
             }
         });
         wrapperF.fileNameField.addActionListener(e -> {
+            saveMessage.setVisible(true);
             FILENAME = wrapperF.fileNameField.getText();
             fileNameValidate();
         });

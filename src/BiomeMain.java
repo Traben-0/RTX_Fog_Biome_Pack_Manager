@@ -26,6 +26,8 @@ public class BiomeMain {
     private static String biomeFileName = "biomes_client.json";
     private static JMenuBar menuBar;
 
+    static JLabel saveMessage;
+
     private static JPanel contain;
     private static ArrayList<biome> biomes;
     private static ArrayList<String> copyableBiomeFogs;
@@ -44,8 +46,6 @@ public class BiomeMain {
         start(args);
     }
 
-
-
     private static void start(String[] args){
         frame = new JFrame();
         //frame.setContentPane(distancePage.distance_content);
@@ -61,18 +61,21 @@ public class BiomeMain {
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                System.out.println("exiting");
-                try {
-                    if (activeDirectory.getName().equals("temp_manager_mcpack_folder")) {
-                        deleteDirectoryStream(activeDirectory.toPath());
+                if (saveMessage.isVisible()) {
+                    int result = JOptionPane.showConfirmDialog(frame, "Unsaved changes detected!\n(you can save the biomes in 'File/Save')\n \n Exit without saving?", "Exit?",
+                            JOptionPane.YES_NO_OPTION,
+                            JOptionPane.QUESTION_MESSAGE);
+                    if (result == JOptionPane.YES_OPTION) {
+                        closingF();
+                    } else if (result == JOptionPane.NO_OPTION) {
+                        //label.setText("You selected: No");
+                    } else {
+                        //label.setText("None selected");
                     }
-                }catch(IOException i){
-                    System.out.println("not deleted");
-                }catch(Exception p){
-                    //ignore
+                }else{
+                    closingF();
                 }
-                frame.dispose();
-                System.exit(0);
+
             }
         });
 
@@ -83,6 +86,21 @@ public class BiomeMain {
 
         if (launch.exitASAP) exitLauncher();
     }
+    static void closingF(){
+        System.out.println("exiting");
+        try {
+            if (activeDirectory.getName().equals("temp_manager_mcpack_folder")) {
+                deleteDirectoryStream(activeDirectory.toPath());
+            }
+        }catch(IOException i){
+            System.out.println("not deleted");
+        }catch(Exception p){
+            //ignore
+        }
+        frame.dispose();
+        System.exit(0);
+    }
+
     static void deleteDirectoryStream(Path path) throws IOException {
         Files.walk(path)
                 .sorted(Comparator.reverseOrder())
@@ -100,8 +118,13 @@ public class BiomeMain {
         JMenuItem  newManageLocation= new JMenuItem("New");
         JMenuItem  newManageLocationOpen= new JMenuItem("Open");
 
+        saveMessage = new JLabel("* Unsaved changes (go to File/Save)");
+        saveMessage.setForeground(new Color(180,0,0));
+
+
         saveMenu = new JMenuItem("Save changes");
         exportPackMenu = new JMenuItem("Export as .mcpack");
+
 
         menu.add(newManageLocation);
         menu.add(newManageLocationOpen);
@@ -124,6 +147,9 @@ public class BiomeMain {
         menuBar.add(sep);
         menuBar.add(editorM);
         //frame.setJMenuBar(menuBar);
+
+        menuBar.add(saveMessage);
+        saveMessage.setVisible(false);
 
         editor.addActionListener(e -> new Main("editor","","",false,false));
         editorFF.addActionListener(explorer);
@@ -159,6 +185,7 @@ public class BiomeMain {
                     orignalZipFile = f;
                     saveBiomeFile(new File(activeDirectory+"\\biomes_client.json"));
                     orignalZipFile = null;
+                    saveMessage.setVisible(false);
 
                 } else {
                     //log.append("Open command cancelled by user." + newline);
@@ -239,6 +266,7 @@ public class BiomeMain {
         public void actionPerformed(ActionEvent evt) {
             toptimer.stop();
             manager.scrllpane.getViewport().setViewPosition(new Point(0,0));
+            BiomeMain.saveMessage.setVisible(false);
         }
     });
 
@@ -252,8 +280,10 @@ public class BiomeMain {
         if (launch.isZip){
             orignalZipFile = launch.zipFile;
             saveMenu.setEnabled(false);
+            saveMessage.setText("* Unsaved changes (go to File/Export)");
         }else{
             orignalZipFile = null;
+            saveMessage.setText("* Unsaved changes (go to File/Save)");
         }
 
         frame.setContentPane(manager.ManagerContent);
@@ -293,7 +323,7 @@ public class BiomeMain {
             public void componentResized(ComponentEvent e) {
                 Dimension d = frame.getSize();
                 //manager.ManagerContent.setSize(d);
-                int columns =  d.width/315;
+                int columns =  d.width/325;
                 if (columns == 0) columns = 1;
                 contain.setLayout(new GridLayout(0,columns));
                 //render();
@@ -372,7 +402,7 @@ public class BiomeMain {
             utilityTraben.message(frame, "cannot select own path");
         }
 
-
+        saveMessage.setVisible(true);
 
     }
     private static void doImport(ArrayList<biome> finalListToSend){
@@ -513,6 +543,7 @@ public class BiomeMain {
             button.addActionListener(e -> {
                 doImport(finalListToSend);
                 prompt.dispose();
+                saveMessage.setVisible(true);
             });
             cont.add(button,Component.CENTER_ALIGNMENT);
         }else{
@@ -567,6 +598,7 @@ public class BiomeMain {
             for (biome b:biomes) {
                 b.receiveAllList(biomes);
             }
+            //BiomeMain.saveMessage.setVisible(false);
         }catch(IOException i){
             //
         }
@@ -993,6 +1025,8 @@ public class BiomeMain {
 
 
     private static void saveBiomeFile(File f){
+
+        saveMessage.setVisible(false);
         try {
             if (f.exists()) System.out.println("biomes_client_overwritten: " + f.delete());
             FileWriter output = new FileWriter(f);
@@ -1044,13 +1078,8 @@ public class BiomeMain {
 
 
     //    filePath can be "" to be ignored
-    private static void initFogEditorButton(JButton button, String str, String filePath){
-        button.addActionListener(e -> openFogEditor(str, filePath));
-    }
 
-    private static void openFogEditor(String str, String filePath){
-        new Main(str, filePath,"",false,false);
-    }
+
 
     private static void render(){
         frame.pack();

@@ -240,6 +240,7 @@ public class biome {
     }
 
     private ActionListener imagesAL = e -> {
+        BiomeMain.saveMessage.setVisible(true);
         isEnabled = !isEnabled;
         tabbedPane1.setEnabledAt(1,isEnabled);
         tabbedPane1.setEnabledAt(2,isEnabled);
@@ -264,11 +265,13 @@ public class biome {
         transSet();
         if (transparencySlider.getChangeListeners().length==0)
         transparencySlider.addChangeListener(e -> {
+            BiomeMain.saveMessage.setVisible(true);
             transparency = transparencySlider.getValue()/100d;
             transSet();
         });
         if (transparencyField.getChangeListeners().length==0)
         transparencyField.addChangeListener(e -> {
+            BiomeMain.saveMessage.setVisible(true);
             transparency = (double)transparencyField.getValue();
             transSet();
         });
@@ -297,6 +300,7 @@ public class biome {
             copyingOtherFog = false;
             fogID = "managed:"+name+"_custom_managed";
             openingCustomEditor();
+            BiomeMain.saveMessage.setVisible(true);
 
         } else {
             //log.append("Open command cancelled by user." + newline);
@@ -375,6 +379,7 @@ public class biome {
         }
 
         private void openingCustomEditor(){
+            BiomeMain.saveMessage.setVisible(true);
             if (customFile!=null) {
                 try {
                     if (!customFile.getName().equals(name+".custom.fogManager.json")) {
@@ -510,6 +515,7 @@ public class biome {
     private ChangeListener colText = e ->  setColour(false);
 
     private void setColour(boolean fromSliders){
+        BiomeMain.saveMessage.setVisible(true);
         if(fromSliders) {
             waterColour = new Color(waterRedSlider.getValue(),waterGreenSlider.getValue(),waterBlueSlider.getValue());
         }else {
@@ -542,6 +548,7 @@ public class biome {
 
         if (UseThisFogCheck.getActionListeners().length==0)
         UseThisFogCheck.addActionListener(e -> {
+            BiomeMain.saveMessage.setVisible(true);
             if (UseThisFogCheck.isSelected()) {
                 copyableList.setSelectedItem(this);
                 changeAndReactCopyList();
@@ -551,6 +558,7 @@ public class biome {
             }
         });
         copyableList.addItemListener(e -> {
+            BiomeMain.saveMessage.setVisible(true);
             if (doChangeAndReact) changeAndReactCopyList();
             doChangeAndReact= !doChangeAndReact;
         });
@@ -559,6 +567,7 @@ public class biome {
     }
 
     private void changeAndReactCopyList(){
+        BiomeMain.saveMessage.setVisible(true);
         //openEditorManaged.setEnabled(true);
         System.out.println("what");
         isUsingDefaultFog = (copyableList.getSelectedIndex() == 0);
@@ -597,8 +606,10 @@ public class biome {
     private boolean ignoreNextMSG = false;
 
     private final ActionListener toggleEnable = new ActionListener() {
+
         @Override
         public void actionPerformed(ActionEvent e) {
+            BiomeMain.saveMessage.setVisible(true);
             Object source = e.getSource();
             if (source == waterCheck){
                 toggleEnables(waterCont);
@@ -642,6 +653,7 @@ public class biome {
 
     }
     private static void setEnables(JPanel panel, boolean set){
+        BiomeMain.saveMessage.setVisible(true);
         panel.setEnabled(set);
 
         Component[] components = panel.getComponents();
@@ -656,6 +668,7 @@ public class biome {
     }
 
     private static void toggleEnables(JPanel panel){
+        BiomeMain.saveMessage.setVisible(true);
         panel.setEnabled(!panel.isEnabled());
 
         Component[] components = panel.getComponents();
@@ -669,6 +682,7 @@ public class biome {
         }
     }
     private static void toggleEnables(JPanel panel, boolean set){
+        BiomeMain.saveMessage.setVisible(true);
         panel.setEnabled(set);
 
         Component[] components = panel.getComponents();
