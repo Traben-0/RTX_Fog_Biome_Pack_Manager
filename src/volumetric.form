@@ -18,23 +18,18 @@
         </properties>
         <border type="none"/>
         <children>
-          <grid id="9b31b" layout-manager="GridLayoutManager" row-count="11" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="9b31b" layout-manager="GridLayoutManager" row-count="11" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="10" left="10" bottom="10" right="10"/>
             <constraints/>
             <properties/>
             <border type="none"/>
             <children>
-              <vspacer id="35d83">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                </constraints>
-              </vspacer>
               <component id="657f7" class="javax.swing.JCheckBox" binding="airFogCheckBox" default-binding="true">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Air fog"/>
+                  <text value="Air"/>
                 </properties>
               </component>
               <component id="f62bf" class="javax.swing.JCheckBox" binding="waterFogCheckBox" default-binding="true">
@@ -42,7 +37,7 @@
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Water Fog"/>
+                  <text value="Water"/>
                 </properties>
               </component>
               <component id="3b3e6" class="javax.swing.JCheckBox" binding="weatherFogCheckBox" default-binding="true">
@@ -52,7 +47,7 @@
                 <properties>
                   <foreground color="-3670016"/>
                   <hideActionText value="true"/>
-                  <text value="Weather Fog (Bugged)"/>
+                  <text value="&lt;html&gt;Weather &lt;br&gt;(Bugged)&lt;/html&gt;"/>
                 </properties>
               </component>
               <component id="b8ccd" class="javax.swing.JCheckBox" binding="lavaFogCheckBox" default-binding="true">
@@ -60,7 +55,7 @@
                   <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Lava Fog"/>
+                  <text value="Lava"/>
                 </properties>
               </component>
               <component id="c0911" class="javax.swing.JCheckBox" binding="lava_ResistanceCheckBox" default-binding="true">
@@ -68,163 +63,9 @@
                   <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Lava_Resistance"/>
+                  <text value="&lt;html&gt;Lava&lt;br&gt;Resistance&lt;/html&gt;"/>
                 </properties>
               </component>
-              <grid id="9c1de" binding="air_vfog" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
-                <constraints>
-                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties/>
-                <border type="none"/>
-                <children>
-                  <component id="f811b" class="javax.swing.JLabel" binding="maximumDensityOfTheLabel" default-binding="true">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                        <preferred-size width="150" height="20"/>
-                        <maximum-size width="-1" height="20"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <text value="Maximum density of the Fog"/>
-                    </properties>
-                  </component>
-                  <component id="99404" class="javax.swing.JLabel" binding="zeroDensityHeightLabel" default-binding="true">
-                    <constraints>
-                      <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="4" fill="2" indent="0" use-parent-layout="false">
-                        <preferred-size width="100" height="20"/>
-                        <maximum-size width="-1" height="20"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <text value="Zero density height"/>
-                    </properties>
-                  </component>
-                  <component id="20752" class="javax.swing.JLabel" binding="maxDensityHeightLabel" default-binding="true">
-                    <constraints>
-                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="4" fill="2" indent="0" use-parent-layout="false">
-                        <preferred-size width="100" height="20"/>
-                        <maximum-size width="-1" height="20"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <text value="Max density height"/>
-                    </properties>
-                  </component>
-                  <component id="afbdb" class="javax.swing.JTextField" binding="air_vfog_3">
-                    <constraints>
-                      <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="50" height="20"/>
-                        <maximum-size width="-1" height="20"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <text value="50"/>
-                    </properties>
-                  </component>
-                  <component id="9ef14" class="javax.swing.JTextField" binding="air_vfog_4">
-                    <constraints>
-                      <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="50" height="20"/>
-                        <maximum-size width="-1" height="20"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <text value="128"/>
-                    </properties>
-                  </component>
-                  <component id="294c9" class="javax.swing.JSeparator">
-                    <constraints>
-                      <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="5"/>
-                        <maximum-size width="-1" height="5"/>
-                      </grid>
-                    </constraints>
-                    <properties/>
-                  </component>
-                  <grid id="13180" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                    <margin top="0" left="0" bottom="0" right="0"/>
-                    <constraints>
-                      <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="20"/>
-                        <maximum-size width="-1" height="20"/>
-                      </grid>
-                    </constraints>
-                    <properties/>
-                    <border type="none"/>
-                    <children>
-                      <component id="4b7e8" class="javax.swing.JCheckBox" binding="air_vfog_2">
-                        <constraints>
-                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                            <preferred-size width="-1" height="20"/>
-                            <maximum-size width="-1" height="20"/>
-                          </grid>
-                        </constraints>
-                        <properties>
-                          <text value=""/>
-                        </properties>
-                      </component>
-                      <component id="dc80b" class="javax.swing.JLabel" binding="setFogBeTheLabel" default-binding="true">
-                        <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                            <preferred-size width="100" height="20"/>
-                            <maximum-size width="-1" height="20"/>
-                          </grid>
-                        </constraints>
-                        <properties>
-                          <text value="Set fog be the same thickness at every height?"/>
-                        </properties>
-                      </component>
-                      <hspacer id="28e9f">
-                        <constraints>
-                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="50" height="-1"/>
-                          </grid>
-                        </constraints>
-                      </hspacer>
-                    </children>
-                  </grid>
-                  <grid id="b888d" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                    <margin top="0" left="0" bottom="0" right="0"/>
-                    <constraints>
-                      <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="20"/>
-                        <maximum-size width="-1" height="20"/>
-                      </grid>
-                    </constraints>
-                    <properties/>
-                    <border type="none"/>
-                    <children>
-                      <component id="28018" class="javax.swing.JSlider" binding="a1s">
-                        <constraints>
-                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="250" height="20"/>
-                            <maximum-size width="-1" height="20"/>
-                          </grid>
-                        </constraints>
-                        <properties/>
-                      </component>
-                      <hspacer id="513da">
-                        <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                      </hspacer>
-                      <component id="1ce2a" class="javax.swing.JTextField" binding="air_vfog_1">
-                        <constraints>
-                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="20" height="20"/>
-                            <maximum-size width="-1" height="20"/>
-                          </grid>
-                        </constraints>
-                        <properties>
-                          <text value="0.25"/>
-                        </properties>
-                      </component>
-                    </children>
-                  </grid>
-                </children>
-              </grid>
               <grid id="8b57f" binding="water_vfog" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
@@ -236,8 +77,8 @@
                   <component id="4605d" class="javax.swing.JTextField" binding="water_vfog_3">
                     <constraints>
                       <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="50" height="20"/>
-                        <maximum-size width="-1" height="20"/>
+                        <preferred-size width="50" height="25"/>
+                        <maximum-size width="-1" height="30"/>
                       </grid>
                     </constraints>
                     <properties>
@@ -247,8 +88,8 @@
                   <component id="4a31" class="javax.swing.JTextField" binding="water_vfog_4">
                     <constraints>
                       <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="50" height="20"/>
-                        <maximum-size width="-1" height="20"/>
+                        <preferred-size width="50" height="25"/>
+                        <maximum-size width="-1" height="30"/>
                       </grid>
                     </constraints>
                     <properties>
@@ -343,8 +184,8 @@
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="20"/>
-                        <maximum-size width="-1" height="20"/>
+                        <preferred-size width="-1" height="25"/>
+                        <maximum-size width="-1" height="30"/>
                       </grid>
                     </constraints>
                     <properties/>
@@ -353,8 +194,8 @@
                       <component id="e4356" class="javax.swing.JSlider" binding="w1s">
                         <constraints>
                           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="250" height="20"/>
-                            <maximum-size width="-1" height="20"/>
+                            <preferred-size width="250" height="25"/>
+                            <maximum-size width="-1" height="30"/>
                           </grid>
                         </constraints>
                         <properties/>
@@ -367,8 +208,8 @@
                       <component id="cedc6" class="javax.swing.JTextField" binding="water_vfog_1">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="20" height="20"/>
-                            <maximum-size width="-1" height="20"/>
+                            <preferred-size width="20" height="25"/>
+                            <maximum-size width="-1" height="30"/>
                           </grid>
                         </constraints>
                         <properties>
@@ -390,8 +231,8 @@
                   <component id="72378" class="javax.swing.JTextField" binding="weather_vfog_3">
                     <constraints>
                       <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="50" height="20"/>
-                        <maximum-size width="-1" height="20"/>
+                        <preferred-size width="50" height="25"/>
+                        <maximum-size width="-1" height="30"/>
                       </grid>
                     </constraints>
                     <properties>
@@ -401,8 +242,8 @@
                   <component id="3c6bd" class="javax.swing.JTextField" binding="weather_vfog_4">
                     <constraints>
                       <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="50" height="20"/>
-                        <maximum-size width="-1" height="20"/>
+                        <preferred-size width="50" height="25"/>
+                        <maximum-size width="-1" height="30"/>
                       </grid>
                     </constraints>
                     <properties>
@@ -455,8 +296,8 @@
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="20"/>
-                        <maximum-size width="-1" height="20"/>
+                        <preferred-size width="-1" height="25"/>
+                        <maximum-size width="-1" height="30"/>
                       </grid>
                     </constraints>
                     <properties/>
@@ -465,8 +306,8 @@
                       <component id="b4604" class="javax.swing.JTextField" binding="weather_vfog_1">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="20" height="20"/>
-                            <maximum-size width="-1" height="20"/>
+                            <preferred-size width="20" height="25"/>
+                            <maximum-size width="-1" height="30"/>
                           </grid>
                         </constraints>
                         <properties>
@@ -476,8 +317,8 @@
                       <component id="c4ec0" class="javax.swing.JSlider" binding="e1s">
                         <constraints>
                           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="250" height="20"/>
-                            <maximum-size width="-1" height="20"/>
+                            <preferred-size width="250" height="25"/>
+                            <maximum-size width="-1" height="30"/>
                           </grid>
                         </constraints>
                         <properties/>
@@ -544,8 +385,8 @@
                   <component id="e71e0" class="javax.swing.JTextField" binding="lava_vfog_3">
                     <constraints>
                       <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="50" height="20"/>
-                        <maximum-size width="-1" height="20"/>
+                        <preferred-size width="50" height="25"/>
+                        <maximum-size width="-1" height="30"/>
                       </grid>
                     </constraints>
                     <properties>
@@ -555,8 +396,8 @@
                   <component id="15654" class="javax.swing.JTextField" binding="lava_vfog_4">
                     <constraints>
                       <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="50" height="20"/>
-                        <maximum-size width="-1" height="20"/>
+                        <preferred-size width="50" height="25"/>
+                        <maximum-size width="-1" height="30"/>
                       </grid>
                     </constraints>
                     <properties>
@@ -567,8 +408,8 @@
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="20"/>
-                        <maximum-size width="-1" height="20"/>
+                        <preferred-size width="-1" height="25"/>
+                        <maximum-size width="-1" height="30"/>
                       </grid>
                     </constraints>
                     <properties/>
@@ -577,8 +418,8 @@
                       <component id="ecea" class="javax.swing.JTextField" binding="lava_vfog_1">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="20" height="20"/>
-                            <maximum-size width="-1" height="20"/>
+                            <preferred-size width="20" height="25"/>
+                            <maximum-size width="-1" height="30"/>
                           </grid>
                         </constraints>
                         <properties>
@@ -588,8 +429,8 @@
                       <component id="3c94f" class="javax.swing.JSlider" binding="l1s">
                         <constraints>
                           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="250" height="20"/>
-                            <maximum-size width="-1" height="20"/>
+                            <preferred-size width="250" height="25"/>
+                            <maximum-size width="-1" height="30"/>
                           </grid>
                         </constraints>
                         <properties/>
@@ -698,8 +539,8 @@
                   <component id="77f5a" class="javax.swing.JTextField" binding="lava_resistance_vfog_3">
                     <constraints>
                       <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="50" height="20"/>
-                        <maximum-size width="-1" height="20"/>
+                        <preferred-size width="50" height="25"/>
+                        <maximum-size width="-1" height="30"/>
                       </grid>
                     </constraints>
                     <properties>
@@ -709,8 +550,8 @@
                   <component id="c8b4f" class="javax.swing.JTextField" binding="lava_resistance_vfog_4">
                     <constraints>
                       <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="50" height="20"/>
-                        <maximum-size width="-1" height="20"/>
+                        <preferred-size width="50" height="25"/>
+                        <maximum-size width="-1" height="30"/>
                       </grid>
                     </constraints>
                     <properties>
@@ -763,8 +604,8 @@
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="20"/>
-                        <maximum-size width="-1" height="20"/>
+                        <preferred-size width="-1" height="25"/>
+                        <maximum-size width="-1" height="30"/>
                       </grid>
                     </constraints>
                     <properties/>
@@ -773,8 +614,8 @@
                       <component id="289c" class="javax.swing.JTextField" binding="lava_resistance_vfog_1">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="20" height="20"/>
-                            <maximum-size width="-1" height="20"/>
+                            <preferred-size width="20" height="25"/>
+                            <maximum-size width="-1" height="30"/>
                           </grid>
                         </constraints>
                         <properties>
@@ -784,8 +625,8 @@
                       <component id="63fd2" class="javax.swing.JSlider" binding="lr1s">
                         <constraints>
                           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="250" height="20"/>
-                            <maximum-size width="-1" height="20"/>
+                            <preferred-size width="250" height="25"/>
+                            <maximum-size width="-1" height="30"/>
                           </grid>
                         </constraints>
                         <properties/>
@@ -872,6 +713,168 @@
                   </grid>
                 </constraints>
               </vspacer>
+              <component id="419b4" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Camera location"/>
+                </properties>
+              </component>
+              <grid id="ca581" binding="air_vfog" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="aba85" class="javax.swing.JTextField" binding="air_vfog_3">
+                    <constraints>
+                      <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="50" height="25"/>
+                        <maximum-size width="-1" height="30"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="50"/>
+                    </properties>
+                  </component>
+                  <component id="3c6c3" class="javax.swing.JTextField" binding="air_vfog_4">
+                    <constraints>
+                      <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="50" height="25"/>
+                        <maximum-size width="-1" height="30"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="128"/>
+                    </properties>
+                  </component>
+                  <component id="abf74" class="javax.swing.JLabel" default-binding="true">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="150" height="20"/>
+                        <maximum-size width="-1" height="20"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="Maximum density of the Fog"/>
+                    </properties>
+                  </component>
+                  <grid id="cc76f" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="-1" height="20"/>
+                        <maximum-size width="-1" height="20"/>
+                      </grid>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="fe056" class="javax.swing.JLabel" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="20"/>
+                            <maximum-size width="300" height="20"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <text value="Set fog be the same thickness at every height?"/>
+                        </properties>
+                      </component>
+                      <hspacer id="493ac">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="50" height="-1"/>
+                          </grid>
+                        </constraints>
+                      </hspacer>
+                      <component id="80640" class="javax.swing.JCheckBox" binding="air_vfog_2">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="-1" height="20"/>
+                            <maximum-size width="-1" height="20"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <text value=""/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <component id="2719c" class="javax.swing.JLabel" default-binding="true">
+                    <constraints>
+                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="4" fill="2" indent="0" use-parent-layout="false">
+                        <preferred-size width="100" height="20"/>
+                        <maximum-size width="-1" height="20"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="Max density height"/>
+                    </properties>
+                  </component>
+                  <component id="f4aed" class="javax.swing.JLabel" default-binding="true">
+                    <constraints>
+                      <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="4" fill="2" indent="0" use-parent-layout="false">
+                        <preferred-size width="100" height="20"/>
+                        <maximum-size width="-1" height="20"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="Zero density height"/>
+                    </properties>
+                  </component>
+                  <component id="392ab" class="javax.swing.JSeparator">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="-1" height="5"/>
+                        <maximum-size width="-1" height="5"/>
+                      </grid>
+                    </constraints>
+                    <properties/>
+                  </component>
+                  <grid id="5f652" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="-1" height="25"/>
+                        <maximum-size width="-1" height="30"/>
+                      </grid>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="5e405" class="javax.swing.JSlider" binding="a1s">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="250" height="25"/>
+                            <maximum-size width="-1" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <hspacer id="c8f12">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                      </hspacer>
+                      <component id="713c4" class="javax.swing.JTextField" binding="air_vfog_1">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="20" height="25"/>
+                            <maximum-size width="-1" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <text value="0.25"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
             </children>
           </grid>
         </children>

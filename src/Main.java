@@ -309,7 +309,9 @@ public class Main {
                     value =0;
                     text.setText("0.0");
                 }
-                slider.setValue(value);
+
+
+                slider.setValue( value);
 
                 //double dub = (double)text.getValue();
                 //double dub2 = Double.parseDouble(text.toString());
@@ -334,7 +336,9 @@ public class Main {
             if (str.matches("1")) str = "1.0";
             if (str.matches("0")) str = "0.0";*/
 
-            text.setText(slider.getValue()/10000d+"");
+            DecimalFormat dc = new DecimalFormat("0.0000");
+            //String formattedText = dc.format(yourDouble);
+            text.setText(dc.format(slider.getValue()/10000d));
         }
 
 
@@ -348,43 +352,43 @@ public class Main {
         Object source = e.getItemSelectable();
 
         if (source == volumetricPage.air_vfog_2) {
-            volumetricPage.air_vfog_3.setEditable(
-                    !volumetricPage.air_vfog_3.isEditable(
+            volumetricPage.air_vfog_3.setEnabled(
+                    !volumetricPage.air_vfog_3.isEnabled(
             ));
-            volumetricPage.air_vfog_4.setEditable(
-                    !volumetricPage.air_vfog_4.isEditable(
+            volumetricPage.air_vfog_4.setEnabled(
+                    !volumetricPage.air_vfog_4.isEnabled(
                     ));
 
         } else if (source == volumetricPage.water_vfog_2) {
-            volumetricPage.water_vfog_3.setEditable(
-                    !volumetricPage.water_vfog_3.isEditable(
+            volumetricPage.water_vfog_3.setEnabled(
+                    !volumetricPage.water_vfog_3.isEnabled(
                     ));
-            volumetricPage.water_vfog_4.setEditable(
-                    !volumetricPage.water_vfog_4.isEditable(
+            volumetricPage.water_vfog_4.setEnabled(
+                    !volumetricPage.water_vfog_4.isEnabled(
                     ));
 
         } else if(source == volumetricPage.weather_vfog_2) {
-            volumetricPage.weather_vfog_3.setEditable(
-                    !volumetricPage.weather_vfog_3.isEditable(
+            volumetricPage.weather_vfog_3.setEnabled(
+                    !volumetricPage.weather_vfog_3.isEnabled(
                     ));
-            volumetricPage.weather_vfog_4.setEditable(
-                    !volumetricPage.weather_vfog_4.isEditable(
+            volumetricPage.weather_vfog_4.setEnabled(
+                    !volumetricPage.weather_vfog_4.isEnabled(
                     ));
 
         } else if(source == volumetricPage.lava_vfog_2) {
-            volumetricPage.lava_vfog_3.setEditable(
-                    !volumetricPage.lava_vfog_3.isEditable(
+            volumetricPage.lava_vfog_3.setEnabled(
+                    !volumetricPage.lava_vfog_3.isEnabled(
                     ));
-            volumetricPage.lava_vfog_4.setEditable(
-                    !volumetricPage.lava_vfog_4.isEditable(
+            volumetricPage.lava_vfog_4.setEnabled(
+                    !volumetricPage.lava_vfog_4.isEnabled(
                     ));
 
         }else if(source == volumetricPage.lava_resistance_vfog_2) {
-            volumetricPage.lava_resistance_vfog_3.setEditable(
-                    !volumetricPage.lava_resistance_vfog_3.isEditable(
+            volumetricPage.lava_resistance_vfog_3.setEnabled(
+                    !volumetricPage.lava_resistance_vfog_3.isEnabled(
                     ));
-            volumetricPage.lava_resistance_vfog_4.setEditable(
-                    !volumetricPage.lava_resistance_vfog_4.isEditable(
+            volumetricPage.lava_resistance_vfog_4.setEnabled(
+                    !volumetricPage.lava_resistance_vfog_4.isEnabled(
                     ));
 
         }
@@ -790,9 +794,9 @@ public class Main {
         //if (closeFullProgramOnExit)frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 
-        wrapperF.tabbedPane1.add("Distance Fog", distancePage.distance_content);
-        wrapperF.tabbedPane1.add("Volumetric Fog (RTX)",volumetricPage.volumetric_content);
-        wrapperF.tabbedPane1.add("Media Coefficients (RTX)",coefficiantPage.coefficient_content);
+        wrapperF.tabbedPane1.add("<html>[Vanilla]<br> Distance Fog</html>", distancePage.distance_content);
+        wrapperF.tabbedPane1.add("<html>[RTX]<br> Volumetric Fog (e.g Godrays)</html>",volumetricPage.volumetric_content);
+        wrapperF.tabbedPane1.add("<html>[RTX]<br> Colour values of materials</html>",coefficiantPage.coefficient_content);
 
         distancePage.scrll.getVerticalScrollBar().setUnitIncrement(20);
         volumetricPage.scrll.getVerticalScrollBar().setUnitIncrement(20);
@@ -802,9 +806,9 @@ public class Main {
         if (titleAppend.matches("")) titleAppend = "¯\\_(ツ)_/¯";
         frame.setTitle("Fog Editor BETA: " + titleAppend);
 
-        frame.setSize(600,700); //pixel size of frame in width then height
-        frame.setPreferredSize(new Dimension(600,700));
-        frame.setMaximumSize(new Dimension(600,700));
+        frame.setSize(610,700); //pixel size of frame in width then height
+        frame.setPreferredSize(new Dimension(610,700));
+        frame.setMaximumSize(new Dimension(610,700));
 
         setInvisisbles();
         //initMenu();
@@ -1023,8 +1027,8 @@ public class Main {
     }
 
         private void hideManagedSettings(){
-        wrapperF.indentifierBox.setEditable(false);
-        wrapperF.fileNameField.setEditable(false);
+        wrapperF.indentifierBox.setEnabled(false);
+        wrapperF.fileNameField.setEnabled(false);
 
 
 
@@ -1106,8 +1110,8 @@ public class Main {
             distancePage.as2.setVisible(true);
             distancePage.as1.setValue((int)(zeroToOne(distancePage.air_fog_1.getText()) * 100));
             distancePage.as2.setValue((int)(zeroToOne(distancePage.air_fog_2.getText()) * 100));
-            distancePage.air_fog_1.setEditable(false);
-            distancePage.air_fog_2.setEditable(false);
+            distancePage.air_fog_1.setEnabled(false);
+            distancePage.air_fog_2.setEnabled(false);
 
         }else{
             //do fixed
@@ -1115,8 +1119,8 @@ public class Main {
             distancePage.at2.setText("<html> End distance<br/> *Blocks</html>");
             distancePage.as1.setVisible(false);
             distancePage.as2.setVisible(false);
-            distancePage.air_fog_1.setEditable(true);
-            distancePage.air_fog_2.setEditable(true);
+            distancePage.air_fog_1.setEnabled(true);
+            distancePage.air_fog_2.setEnabled(true);
 
         }
         if (distancePage.water_fog_4.getSelectedIndex()==0){
@@ -1127,16 +1131,16 @@ public class Main {
             distancePage.ws2.setVisible(true);
             distancePage.ws1.setValue((int)(zeroToOne(distancePage.water_fog_1.getText()) * 100));
             distancePage.ws2.setValue((int)(zeroToOne(distancePage.water_fog_2.getText()) * 100));
-            distancePage.water_fog_1.setEditable(false);
-            distancePage.water_fog_2.setEditable(false);
+            distancePage.water_fog_1.setEnabled(false);
+            distancePage.water_fog_2.setEnabled(false);
         }else{
             //do fixed
             distancePage.wt1.setText("<html>Start distance<br/> *Blocks</html>");
             distancePage.wt2.setText("<html>End distance<br/> *Blocks</html>");
             distancePage.ws1.setVisible(false);
             distancePage.ws2.setVisible(false);
-            distancePage.water_fog_1.setEditable(true);
-            distancePage.water_fog_2.setEditable(true);
+            distancePage.water_fog_1.setEnabled(true);
+            distancePage.water_fog_2.setEnabled(true);
         }
         if (distancePage.weather_fog_4.getSelectedIndex()==0){
             // do render
@@ -1146,16 +1150,16 @@ public class Main {
             distancePage.es2.setVisible(true);
             distancePage.es1.setValue((int)(zeroToOne(distancePage.weather_fog_1.getText()) * 100));
             distancePage.es2.setValue((int)(zeroToOne(distancePage.weather_fog_2.getText()) * 100));
-            distancePage.weather_fog_1.setEditable(false);
-            distancePage.weather_fog_2.setEditable(false);
+            distancePage.weather_fog_1.setEnabled(false);
+            distancePage.weather_fog_2.setEnabled(false);
         }else{
             //do fixed
             distancePage.et1.setText("<html>Start distance<br/> *Blocks</html>");
             distancePage.et2.setText("<html>End distance<br/> *Blocks</html>");
             distancePage.es1.setVisible(false);
             distancePage.es2.setVisible(false);
-            distancePage.weather_fog_1.setEditable(true);
-            distancePage.weather_fog_2.setEditable(true);
+            distancePage.weather_fog_1.setEnabled(true);
+            distancePage.weather_fog_2.setEnabled(true);
         }
         if (distancePage.lava_fog_4.getSelectedIndex()==0){
             // do render
@@ -1165,16 +1169,16 @@ public class Main {
             distancePage.ls2.setVisible(true);
             distancePage.ls1.setValue((int)(zeroToOne(distancePage.lava_fog_1.getText()) * 100));
             distancePage.ls2.setValue((int)(zeroToOne(distancePage.lava_fog_2.getText()) * 100));
-            distancePage.lava_fog_1.setEditable(false);
-            distancePage.lava_fog_2.setEditable(false);
+            distancePage.lava_fog_1.setEnabled(false);
+            distancePage.lava_fog_2.setEnabled(false);
         }else{
             //do fixed
             distancePage.lt1.setText("<html>Start distance<br/> *Blocks</html>");
             distancePage.lt2.setText("<html>End distance<br/> *Blocks</html>");
             distancePage.ls1.setVisible(false);
             distancePage.ls2.setVisible(false);
-            distancePage.lava_fog_1.setEditable(true);
-            distancePage.lava_fog_2.setEditable(true);
+            distancePage.lava_fog_1.setEnabled(true);
+            distancePage.lava_fog_2.setEnabled(true);
         }
         if (distancePage.lava_resistance_fog_4.getSelectedIndex()==0){
             // do render
@@ -1184,16 +1188,16 @@ public class Main {
             distancePage.lrs2.setVisible(true);
             distancePage.lrs1.setValue((int)(zeroToOne(distancePage.lava_resistance_fog_1.getText()) * 100));
             distancePage.lrs2.setValue((int)(zeroToOne(distancePage.lava_resistance_fog_2.getText()) * 100));
-            distancePage.lava_resistance_fog_1.setEditable(false);
-            distancePage.lava_resistance_fog_2.setEditable(false);
+            distancePage.lava_resistance_fog_1.setEnabled(false);
+            distancePage.lava_resistance_fog_2.setEnabled(false);
         }else{
             //do fixed
             distancePage.lrt1.setText("<html>Start distance<br/> *Blocks</html>");
             distancePage.lrt2.setText("<html>End distance<br/> *Blocks</html>");
             distancePage.lrs1.setVisible(false);
             distancePage.lrs2.setVisible(false);
-            distancePage.lava_resistance_fog_1.setEditable(true);
-            distancePage.lava_resistance_fog_2.setEditable(true);
+            distancePage.lava_resistance_fog_1.setEnabled(true);
+            distancePage.lava_resistance_fog_2.setEnabled(true);
         }
 
 
@@ -1340,6 +1344,8 @@ public class Main {
         distancePage.lava_resistance_fog_4.addActionListener(renderChange);
 
 
+
+       // coefficiantPage.a_a_r_1.;
 
         coefficiantPage.a_a_r_1.addFocusListener(updateOthers);
         coefficiantPage.a_a_r_2.addChangeListener(updateOthersSlider);
@@ -1587,9 +1593,9 @@ public class Main {
         volumetricPage.a1s.setValue(0);
         volumetricPage.air_vfog_2.setSelected(true);
         volumetricPage.air_vfog_3.setText("64");
-        volumetricPage.air_vfog_3.setEditable(false);
+        volumetricPage.air_vfog_3.setEnabled(false);
         volumetricPage.air_vfog_4.setText("128");
-        volumetricPage.air_vfog_4.setEditable(false);
+        volumetricPage.air_vfog_4.setEnabled(false);
 
         volumetricPage.waterFogCheckBox.setSelected(false);
         volumetricPage.water_vfog.setVisible(false);
@@ -1597,9 +1603,9 @@ public class Main {
         volumetricPage.w1s.setValue(0);
         volumetricPage.water_vfog_2.setSelected(true);
         volumetricPage.water_vfog_3.setText("64");
-        volumetricPage.water_vfog_3.setEditable(false);
+        volumetricPage.water_vfog_3.setEnabled(false);
         volumetricPage.water_vfog_4.setText("128");
-        volumetricPage.water_vfog_4.setEditable(false);
+        volumetricPage.water_vfog_4.setEnabled(false);
 
         volumetricPage.weatherFogCheckBox.setSelected(false);
         volumetricPage.weather_vfog.setVisible(false);
@@ -1607,9 +1613,9 @@ public class Main {
         volumetricPage.e1s.setValue(0);
         volumetricPage.weather_vfog_2.setSelected(true);
         volumetricPage.weather_vfog_3.setText("64");
-        volumetricPage.weather_vfog_3.setEditable(false);
+        volumetricPage.weather_vfog_3.setEnabled(false);
         volumetricPage.weather_vfog_4.setText("128");
-        volumetricPage.weather_vfog_4.setEditable(false);
+        volumetricPage.weather_vfog_4.setEnabled(false);
 
         volumetricPage.lavaFogCheckBox.setSelected(false);
         volumetricPage.lava_vfog.setVisible(false);
@@ -1617,9 +1623,9 @@ public class Main {
         volumetricPage.l1s.setValue(0);
         volumetricPage.lava_vfog_2.setSelected(true);
         volumetricPage.lava_vfog_3.setText("64");
-        volumetricPage.lava_vfog_3.setEditable(false);
+        volumetricPage.lava_vfog_3.setEnabled(false);
         volumetricPage.lava_vfog_4.setText("128");
-        volumetricPage.lava_vfog_4.setEditable(false);
+        volumetricPage.lava_vfog_4.setEnabled(false);
 
         volumetricPage.lava_ResistanceCheckBox.setSelected(false);
         volumetricPage.lava_resistance_vfog.setVisible(false);
@@ -1627,9 +1633,9 @@ public class Main {
         volumetricPage.lr1s.setValue(0);
         volumetricPage.lava_resistance_vfog_2.setSelected(true);
         volumetricPage.lava_resistance_vfog_3.setText("64");
-        volumetricPage.lava_resistance_vfog_3.setEditable(false);
+        volumetricPage.lava_resistance_vfog_3.setEnabled(false);
         volumetricPage.lava_resistance_vfog_4.setText("128");
-        volumetricPage.lava_resistance_vfog_4.setEditable(false);
+        volumetricPage.lava_resistance_vfog_4.setEnabled(false);
 
 
         coefficiantPage.airCheckBox.setSelected(false);
@@ -1709,11 +1715,16 @@ public class Main {
             Scanner input = new Scanner(file);
             //System.out.println("here");
             String line;
+            boolean i = false;
+            boolean d = false;
+            boolean v = false;
+            boolean c = false;
             while (input.hasNextLine()) {
                  line = input.nextLine();
                 //read identifier
                 System.out.println(line);
-                if (line.contains("identifier")) {
+
+                if (line.contains("identifier") && !i) {
                     line = line.replace(" ", "");
                     line = line.replace("\"", "");
                     line = line.replace("identifier", "");
@@ -1721,15 +1732,19 @@ public class Main {
                     indentifier = line;
                     wrapperF.indentifierBox.setText(line);
                     System.out.println("identifier set");
+                    i=true;
                 }
-                if (line.contains("distance")) {
+                if (line.contains("distance") && !d) {
                     loadDistance(input);
+                    d=true;
                 }
-                if (line.contains("density")) {
+                if (line.contains("density") && !v) {
                     loadVolumetric(input);
+                    v=true;
                 }
-                if (line.contains("media")) {
+                if (line.contains("media") && !c) {
                     loadCoefficients(input);
+                    c=true;
                 }
             }
 
@@ -1911,7 +1926,10 @@ public class Main {
             line = line.replace("\"", "");
             if (line.matches("}")) break;
             line = line.replace(",", "");
+            if (line.contains("media")) {
+                loadCoefficients(input);
 
+            }
             if (line.contains("air")) {
                 //read air and continue true or false returns
                 cont = readOneVolume(input,
@@ -1985,8 +2003,8 @@ public class Main {
         String line;
         //set if not uniform
         uniform.setSelected(false);
-        maxH.setEditable(true);
-        zeroH.setEditable(true);
+        maxH.setEnabled(true);
+        zeroH.setEnabled(true);
 
         while (input.hasNextLine()){
             line= input.nextLine();
@@ -2006,8 +2024,8 @@ public class Main {
                 line = clearRead(line,"uniform");
                 if (line.contains("true")){
                     uniform.setSelected(true);
-                    maxH.setEditable(false);
-                    zeroH.setEditable(false);
+                    maxH.setEnabled(false);
+                    zeroH.setEnabled(false);
                 }
 
 
@@ -2035,7 +2053,7 @@ public class Main {
             line = line.replace(" ", "");
             line = line.replace(":", "");
             line = line.replace("\"", "");
-            if (line.matches("}")) break;
+            if (line.matches("}") || line.contains("volumetric")) break;
             line = line.replace(",", "");
 
             if (line.contains("air")) {

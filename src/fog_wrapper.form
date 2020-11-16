@@ -79,8 +79,8 @@
               <component id="747f0" class="javax.swing.JTextField" binding="indentifierBox">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="250" height="24"/>
-                    <maximum-size width="300" height="20"/>
+                    <preferred-size width="250" height="25"/>
+                    <maximum-size width="300" height="35"/>
                   </grid>
                 </constraints>
                 <properties>

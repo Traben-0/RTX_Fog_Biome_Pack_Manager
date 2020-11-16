@@ -8,10 +8,6 @@ public class volumetric {
     public JCheckBox lava_ResistanceCheckBox;
     public JPanel air_vfog;
     public JTextField air_vfog_1;
-    public JLabel maximumDensityOfTheLabel;
-    public JLabel zeroDensityHeightLabel;
-    public JLabel setFogBeTheLabel;
-    public JLabel maxDensityHeightLabel;
     public JCheckBox air_vfog_2;
     public JTextField air_vfog_3;
     public JTextField air_vfog_4;

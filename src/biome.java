@@ -82,6 +82,7 @@ public class biome {
     private JCheckBox UseThisFogCheck;
     private JPanel colourDisplay;
     private JLabel orFogText;
+    private JScrollPane scrollr;
 
     private boolean amDefault = false;
 
@@ -167,6 +168,8 @@ public class biome {
             copyIDBackup = fogIdentifier;
         }
         setFogID(fogIdentifier);
+
+        scrollr.getVerticalScrollBar().setUnitIncrement(50);
 
         if (image.getActionListeners().length==0)
             image.addActionListener(imagesAL);
@@ -792,7 +795,7 @@ public class biome {
 
     private void imageFade(Boolean isClear){
         BufferedImage back;
-        back = utilityTraben.getImage("assets/" + name + ".png",265,180,!isClear);
+        back = utilityTraben.getImage("assets/" + name + ".png",265,175,!isClear);
         //back = new ImageIcon(getClass().getResource("assets/" + name + ".png"));
         image.setIcon(new ImageIcon(back));
     }

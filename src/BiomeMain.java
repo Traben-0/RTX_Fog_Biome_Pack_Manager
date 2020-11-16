@@ -17,7 +17,7 @@ import java.util.zip.ZipOutputStream;
 
 public class BiomeMain {
 
-    private static int currentVersion = 14;
+    private static int currentVersion = 15;
 
 
     private static JMenuItem saveMenu;
@@ -45,6 +45,19 @@ public class BiomeMain {
 
 
     public static void main(String[] args) {
+
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            // If Nimbus is not available, you can set the GUI to another look and feel.
+        }
+
+
         //Main bob = new Main("editor","", true,false);
 
         //https://raw.githubusercontent.com/btrab1/RTX_Fog_Biome_Pack_Manager/main/versionCheckFile

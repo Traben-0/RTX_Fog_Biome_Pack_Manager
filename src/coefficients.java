@@ -48,7 +48,7 @@ public class coefficients {
     public JTextField cab1;
     public JSlider cab2;
 
-    public JTextArea amountOfLightScatteredTextArea;
+    public JLabel amountOfLightScatteredLabel;
     public JPanel ascp;
     public JPanel aacp;
     public JPanel wscp;
@@ -56,4 +56,9 @@ public class coefficients {
     public JPanel cscp;
     public JPanel cacp;
     JScrollPane scrll;
+    private JLabel amountOfLightAbsorbedLabel;
+    private JLabel amountOfLightScatteredLabel1;
+    private JLabel amountOfLightAbsorbedLabel1;
+    private JLabel amountOfLightScatteredLabel2;
+    private JLabel amountOfLightAbsorbedLabel2;
 }
