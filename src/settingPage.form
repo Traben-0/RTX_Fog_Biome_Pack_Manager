@@ -96,19 +96,21 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="ba20" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="bd687" class="javax.swing.JLabel" binding="gLabel" default-binding="true">
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-15484160"/>
                           <text value="G"/>
                         </properties>
                       </component>
-                      <component id="9037e" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="9907a" class="javax.swing.JLabel" binding="bLabel" default-binding="true">
                         <constraints>
                           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-16775749"/>
                           <text value="B"/>
                         </properties>
                       </component>
@@ -130,11 +132,12 @@
                           <value value="0"/>
                         </properties>
                       </component>
-                      <component id="dd19c" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="4af8f" class="javax.swing.JLabel" binding="rLabel" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-4521980"/>
                           <text value="R"/>
                         </properties>
                       </component>
@@ -155,7 +158,10 @@
                             <preferred-size width="30" height="-1"/>
                           </grid>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-3621957"/>
+                          <foreground color="-3621957"/>
+                        </properties>
                       </component>
                       <component id="10bdd" class="javax.swing.JSpinner" binding="ag">
                         <constraints>
@@ -386,19 +392,21 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="72219" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="78e18" class="javax.swing.JLabel" binding="gLabel1" default-binding="true">
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-15484160"/>
                           <text value="G"/>
                         </properties>
                       </component>
-                      <component id="e18ea" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="d33fe" class="javax.swing.JLabel" binding="bLabel1" default-binding="true">
                         <constraints>
                           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-16775749"/>
                           <text value="B"/>
                         </properties>
                       </component>
@@ -420,11 +428,12 @@
                           <value value="0"/>
                         </properties>
                       </component>
-                      <component id="36b18" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="a37fc" class="javax.swing.JLabel" binding="rLabel1" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-4521980"/>
                           <text value="R"/>
                         </properties>
                       </component>
@@ -675,19 +684,21 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="7d568" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="f1f4d" class="javax.swing.JLabel" binding="gLabel2" default-binding="true">
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-15484160"/>
                           <text value="G"/>
                         </properties>
                       </component>
-                      <component id="7fe8" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="326ab" class="javax.swing.JLabel" binding="bLabel2" default-binding="true">
                         <constraints>
                           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-16775749"/>
                           <text value="B"/>
                         </properties>
                       </component>
@@ -709,11 +720,12 @@
                           <value value="0"/>
                         </properties>
                       </component>
-                      <component id="609a5" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="5d2b3" class="javax.swing.JLabel" binding="rLabel2" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-4521980"/>
                           <text value="R"/>
                         </properties>
                       </component>
@@ -962,19 +974,21 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="63ff6" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="2139b" class="javax.swing.JLabel" binding="gLabel3" default-binding="true">
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-15484160"/>
                           <text value="G"/>
                         </properties>
                       </component>
-                      <component id="5b197" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="1d134" class="javax.swing.JLabel" binding="bLabel3" default-binding="true">
                         <constraints>
                           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-16775749"/>
                           <text value="B"/>
                         </properties>
                       </component>
@@ -996,11 +1010,12 @@
                           <value value="0"/>
                         </properties>
                       </component>
-                      <component id="8100a" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="11efe" class="javax.swing.JLabel" binding="rLabel3" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-4521980"/>
                           <text value="R"/>
                         </properties>
                       </component>
@@ -1249,19 +1264,21 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="209a3" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="15265" class="javax.swing.JLabel" binding="gLabel4" default-binding="true">
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-15484160"/>
                           <text value="G"/>
                         </properties>
                       </component>
-                      <component id="330ec" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="122" class="javax.swing.JLabel" binding="bLabel4" default-binding="true">
                         <constraints>
                           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-16775749"/>
                           <text value="B"/>
                         </properties>
                       </component>
@@ -1283,11 +1300,12 @@
                           <value value="0"/>
                         </properties>
                       </component>
-                      <component id="ec50f" class="javax.swing.JTextArea" default-binding="true">
+                      <component id="c06de" class="javax.swing.JLabel" binding="rLabel4" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-4521980"/>
                           <text value="R"/>
                         </properties>
                       </component>

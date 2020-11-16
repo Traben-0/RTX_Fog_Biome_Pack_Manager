@@ -17,7 +17,7 @@ import java.util.zip.ZipOutputStream;
 
 public class BiomeMain {
 
-    private static int currentVersion = 15;
+    private static int currentVersion = 16;
 
 
     private static JMenuItem saveMenu;

@@ -1232,6 +1232,34 @@ public class Main {
             String str = ""+(distancePage.as2.getValue()/100d);
             distancePage.air_fog_2.setText(str);
         }
+        if (source == distancePage.ws1) {
+            String str = ""+(distancePage.ws1.getValue()/100d);
+            distancePage.water_fog_1.setText(str);
+        }else if (source == distancePage.ws2) {
+            String str = ""+(distancePage.ws2.getValue()/100d);
+            distancePage.water_fog_2.setText(str);
+        }
+        if (source == distancePage.es1) {
+            String str = ""+(distancePage.es1.getValue()/100d);
+            distancePage.weather_fog_1.setText(str);
+        }else if (source == distancePage.es2) {
+            String str = ""+(distancePage.es2.getValue()/100d);
+            distancePage.weather_fog_2.setText(str);
+        }
+        if (source == distancePage.ls1) {
+            String str = ""+(distancePage.ls1.getValue()/100d);
+            distancePage.lava_fog_1.setText(str);
+        }else if (source == distancePage.ls2) {
+            String str = ""+(distancePage.ls2.getValue()/100d);
+            distancePage.lava_fog_2.setText(str);
+        }
+        if (source == distancePage.lrs1) {
+            String str = ""+(distancePage.lrs1.getValue()/100d);
+            distancePage.lava_resistance_fog_1.setText(str);
+        }else if (source == distancePage.lrs2) {
+            String str = ""+(distancePage.lrs2.getValue()/100d);
+            distancePage.lava_resistance_fog_2.setText(str);
+        }
     };
 
 
@@ -2549,6 +2577,9 @@ private void fileNameValidate(){
     }
 
     private void setColours(){
+
+
+
         distancePage.afcp.setBackground(new Color(
                 distancePage.air_fog_3_r.getValue()
                 ,distancePage.air_fog_3_g.getValue()

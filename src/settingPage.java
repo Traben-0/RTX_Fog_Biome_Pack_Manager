@@ -102,6 +102,21 @@ public class settingPage {
     private JLabel fogColourLabel3;
     private JLabel fogColourLabel4;
     JScrollPane scrll;
+    private JLabel gLabel;
+    private JLabel bLabel;
+    private JLabel rLabel;
+    private JLabel gLabel1;
+    private JLabel bLabel1;
+    private JLabel rLabel1;
+    private JLabel gLabel2;
+    private JLabel bLabel2;
+    private JLabel rLabel2;
+    private JLabel gLabel3;
+    private JLabel bLabel3;
+    private JLabel rLabel3;
+    private JLabel gLabel4;
+    private JLabel bLabel4;
+    private JLabel rLabel4;
 
     public void createUIComponents() {
         // TODO: place custom component creation code here
