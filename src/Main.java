@@ -960,7 +960,14 @@ public class Main {
 
     private final ActionListener explorerSave = e -> {
         System.out.println("saveas");
-        final JFileChooser chooser = new JFileChooser(BiomeMain.activeDirectory.getAbsolutePath()+"\\fogs");
+        String path;
+        if(BiomeMain.activeDirectory !=null){
+            path = BiomeMain.activeDirectory.getAbsolutePath()+"\\fogs";
+        }else{
+            path = System.getProperty("user.dir");
+        }
+
+        final JFileChooser chooser = new JFileChooser(path);
         chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         chooser.addChoosableFileFilter(new utilityTraben.fogFileFilter());
         chooser.setAcceptAllFileFilterUsed(false);
@@ -2227,7 +2234,14 @@ private void fileNameValidate(){
 
 
             try {
-                Path dir = FileSystems.getDefault().getPath(BiomeMain.activeDirectory+"/fogs/");
+                Path dir;
+                if (BiomeMain.activeDirectory !=null) {
+
+                dir =FileSystems.getDefault().getPath(BiomeMain.activeDirectory + "/fogs/");
+                }else                {
+                   dir = FileSystems.getDefault().getPath(System.getProperty("user.dir"));
+                }
+
                 Files.createDirectory(Files.createDirectory(dir));
             }catch (FileAlreadyExistsException e){
                 //

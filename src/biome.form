@@ -95,6 +95,7 @@
                 <properties>
                   <background color="-3613198"/>
                   <horizontalScrollBarPolicy value="31"/>
+                  <verticalScrollBarPolicy value="22"/>
                 </properties>
                 <border type="none"/>
                 <children>
